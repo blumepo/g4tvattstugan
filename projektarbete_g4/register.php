@@ -18,6 +18,7 @@
                 Name: <br></br><input type="text" name="Name"></br>
                 Username:<br></br><input type="text" name="Username"></br>
                 Password:<br></br><input type="text" name="Password"></br>
+                Repeat Password:<br></br><input type="text" name="Password2"></br>
                 <input type="submit" name="submit">
 
             </form>

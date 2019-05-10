@@ -4,7 +4,10 @@ function check(){
         alert("You need to fill out all the forms");
         return false;
     }else if (!document.form1.Mail.value.includes(".") || !document.form1.Mail.value.includes("@") ) {
-        alert("You need an actual e-male adress to proceed");
+        alert("You need an actual e-mail adress to proceed");
+        return false;
+    }else if (document.form1.Password.value !=document.form1.Password2.value) {
+        alert("The passwords doesn't match");
         return false;
     }else{
         document.form1.submit();
