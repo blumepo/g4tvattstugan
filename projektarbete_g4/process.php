@@ -31,9 +31,9 @@ function addToDatabase($Name,$Mail,$Username, $Password)
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$Hashed = crypt($password, str_shuffle($password))
+$hash = password_hash($Password, PASSWORD_DEFAULT);
 $sql = "INSERT INTO User_login (Name, Mail, Username, Password)
-VALUES ('$Name','$Mail','$Username', '$Hashed')";
+VALUES ('$Name','$Mail','$Username', '$hash')";
 
 
 if ($conn->query($sql) === TRUE) {
