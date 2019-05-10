@@ -16,7 +16,7 @@
             <form id="form" name="form1" action="process.php" method="_GET" onsubmit="return look()">
                 Name: <br></br><input type="text" name="Name"></br>
                 E-postadress:<br></br><input type="text" name="Epostadress"></br>
-                Kommentar:<br></br><input id="comment" type="text" name="Medelande"></br>
+                Kommentar:<br></br><input id="comment" type="text" name="Meddelande"></br>
                 <input type="submit" name="submit">
 
             </form>
