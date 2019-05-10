@@ -1,10 +1,11 @@
 <!DOCTYPE HTML>
 <?php
-        $namnet = $_GET["Name"];
-        $epost = $_GET["Epostadress"];
-        $medelande = $_GET["Medelande"];
+        $Name = $_GET["Name"];
+        $Mail = $_GET["Mail"];
+        $Username = $_GET["Username"];
+        $Password = $_GET["Password"];
 
-        addTodatabase($namnet,$epost,$medelande);
+        addTodatabase($Name,$Mail,$Username, $Password);
 
  ?>
  <html>
@@ -17,7 +18,7 @@
      </body>
  </html>
  <?php
-function addToDatabase($namnet,$epost,$medelande)
+function addToDatabase($Name,$Mail,$Username, $Password)
  {
      $server  = "dbtrain.im.uu.se";
      $username = "dbtrain_851";
@@ -30,8 +31,8 @@ function addToDatabase($namnet,$epost,$medelande)
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$sql = "INSERT INTO Kommentarer (Name, Epostadress, kommentar)
-VALUES ('$namnet', '$epost', '$medelande')";
+$sql = "INSERT INTO User_login (Name, Mail, Username, Password)
+VALUES ('$Name','$Mail','$Username', '$Password')";
 
 
 if ($conn->query($sql) === TRUE) {

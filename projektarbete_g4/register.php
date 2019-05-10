@@ -32,7 +32,7 @@
 
 
 <script src="assets/js/function.js">
-look();
+check();
 </script>
 
 
