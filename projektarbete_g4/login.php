@@ -11,7 +11,6 @@
                 E-postadress:<br></br><input type="text" name="Mail"></br>
                 Password:<br></br><input type="text" name="Password"></br>
                 <input type="submit" value="logga in">
-
             </form>
     </body>
     </html>
