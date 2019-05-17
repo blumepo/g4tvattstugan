@@ -31,11 +31,9 @@ function addToDatabase($Name,$Mail,$Username, $Password)
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-$salt = uniqid();
-$hash = sha1($Password.$salt);
-$sql = "INSERT INTO User_login (Name, Mail, Username, Password, Salt)
-VALUES ('$Name','$Mail','$Username', '$hash','$salt')";
+$hash = password_hash($Password, PASSWORD_DEFAULT);
+$sql = "INSERT INTO User_login (Name, Mail, Username, Password)
+VALUES ('$Name','$Mail','$Username', '$hash')";
 
 
 if ($conn->query($sql) === TRUE) {
