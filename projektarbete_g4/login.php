@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="assets/css/mall.css">
-        <title></title>
+        <title>Välkommen till inloggningssidan</title>
 
     </head>
     <body>
