@@ -14,6 +14,14 @@
      </body>
  </html>
  <?php
+
+ function test_input($data){
+ $data = trim($data);
+ $data = stripslashes($data);
+ $data = htmlspecialchars($data);
+ return $data;
+ }
+
 function addToDatabase()
  {
      $server  = "dbtrain.im.uu.se";
@@ -33,7 +41,20 @@ if ($conn->connect_error) {
         $Username = mysqli_real_escape_string($conn, $_GET["Username"]);
         $Password = mysqli_real_escape_string($conn,$_GET["Password"]);
 
-if(test_input($Name) ==="" || test_input($Mail) ==="" || test_input($Username) ==="" || test_input($Password) ==="" )
+if(test_input($Name) ==="" || test_input($Mail) ==="" || test_input($Username) ==="" || test_input($Password) ==="" ){
+die("Connection failed, Invalid input from user" . $conn->connect_error);
+}
+
+if(!strpos($mail, ".")){
+die("Connection failed, Invalid email from user" . $conn->connect_error);
+}
+
+if(!strpos($mail, "@")){
+die("Connection failed, Invalid email from user" . $conn->connect_error);
+}
+
+
+
 $salt = uniqid();
 $hash = sha1($Password.$salt);
 $sql = "INSERT INTO User_login (Name, Mail, Username, Password, Salt)
