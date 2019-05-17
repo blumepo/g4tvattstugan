@@ -7,15 +7,11 @@
 
     </head>
     <body>
-
-    </body>
-    </html>
-
-    <?php
-           <form name="form_login" action="process.php" method="_GET" onsubmit="return check()">
+           <form name="form_login" action="login_process.php" method="_GET" onsubmit="return check()">
                 E-postadress:<br></br><input type="text" name="Mail"></br>
                 Password:<br></br><input type="text" name="Password"></br>
                 <input type="submit" value="logga in">
 
             </form>
-?>
+    </body>
+    </html>
