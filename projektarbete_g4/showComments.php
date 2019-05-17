@@ -7,20 +7,14 @@
 
     </head>
     <body>
-    <h1>Min hemsida</p>
+
+            <div class= "header">
+                <h1 id="h1">Tidigare kommentarer</h1>
+            </div>
     </body>
     </html>
 
-    <?php
-
-        $Name = $_GET["Namn"];
-        $Mail = $_GET["E-postadress"];
-        $Comment = $_GET["Kommentar"];
-
-        addCommentTodatabase($Name,$Mail,$Comment);
-        
-function addCommentToDatabase($Name,$Mail,$Comment)
- {
+    <?php 
      $server  = "dbtrain.im.uu.se";
      $username = "dbtrain_851";
      $password = "todopx";
@@ -33,14 +27,20 @@ if ($conn->connect_error) {
 }
 echo "Connection Worked";
 
-$sql = "INSERT INTO Comments (name,email,comment) VALUES ('$Name','$Mail','$Comment')";
+$sql = "SELECT * FROM Comments";
+$result=$conn->query($sql);
 
-if ($conn->query($sql) === TRUE) {
-    echo "New comment posted successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+if ($result->num_rows > 0) 
+{
+    while($row = $result->fetch_assoc())
+    {
+        echo "<p><br> Namn: ". $row["name"]. " - E-post: ". $row["email"]. " - Meddelande: ". $row["comment"] . "<br></p>";
+    }
+}
+else 
+{
+    echo "Inga kommentarer hittades";
 }
 
 $conn->close();
-}
-?>
+    ?>

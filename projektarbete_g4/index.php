@@ -13,21 +13,17 @@
             </div>
             <br/>
 
-            <form id="form" name="form1" action="process.php" method="_GET" onsubmit="return look()">
-                Name: <br></br><input type="text" name="Name"></br>
-                E-postadress:<br></br><input type="text" name="Epostadress"></br>
-                Kommentar:<br></br><input id="comment" type="text" name="Meddelande"></br>
-                <input type="submit" name="submit">
-
+            <form id="form1" name="form1" action="process_com.php" method="_GET" onsubmit="return look()">
+                Name: <br></br><input type="text" name="Namn"></br>
+                E-postadress:<br></br><input type="text" name="E-postadress"></br>
+                Kommentar:<br></br><input id="comment" type="text" name="Kommentar"></br></br>
+                <input type="submit" value="Submit">
             </form>
-            <aside id="comments">
-                <h3 class= "header">Kommentarer:</h3>
+</br>
+            <form id="form2" name="form2" action="showComments.php">
+<input type="submit" value="Visa tidigare kommentarer">
+            </form>
 
-                    <p id="textbox">hey</p>
-
-
-
-            </aside>
 
 
 <script src="assets/js/function.js">
