@@ -45,11 +45,11 @@ if(test_input($Name) ==="" || test_input($Mail) ==="" || test_input($Username) =
 die("Connection failed, Invalid input from user" . $conn->connect_error);
 }
 
-if(!strpos($mail, ".")){
+if(!strpos($Mail, ".")){
 die("Connection failed, Invalid email from user" . $conn->connect_error);
 }
 
-if(!strpos($mail, "@")){
+if(!strpos($Mail, "@")){
 die("Connection failed, Invalid email from user" . $conn->connect_error);
 }
 
