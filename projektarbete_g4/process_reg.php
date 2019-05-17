@@ -1,7 +1,11 @@
 <!DOCTYPE HTML>
 <?php
-  
-        addTodatabase();
+        $Name = $_GET["Name"];
+        $Mail = $_GET["Mail"];
+        $Username = $_GET["Username"];
+        $Password = $_GET["Password"];
+
+        addTodatabase($Name,$Mail,$Username, $Password);
 
  ?>
  <html>
@@ -14,7 +18,7 @@
      </body>
  </html>
  <?php
-function addToDatabase()
+function addToDatabase($Name,$Mail,$Username, $Password)
  {
      $server  = "dbtrain.im.uu.se";
      $username = "dbtrain_851";
@@ -27,17 +31,9 @@ function addToDatabase()
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-       $Name = mysqli_real_escape_string($conn, $_GET["Name"]);
-        $Mail = mysqli_real_escape_string($conn, $_GET["Mail"]);
-        $Username = mysqli_real_escape_string($conn, $_GET["Username"]);
-        $Password = mysqli_real_escape_string($conn,$_GET["Password"]);
-
-if(test_input($Name) ==="" || test_input($Mail) ==="" || test_input($Username) ==="" || test_input($Password) ==="" )
-$salt = uniqid();
-$hash = sha1($Password.$salt);
-$sql = "INSERT INTO User_login (Name, Mail, Username, Password, Salt)
-VALUES ('$Name','$Mail','$Username', '$hash','$salt')";
+$hash = password_hash($Password, PASSWORD_DEFAULT);
+$sql = "INSERT INTO User_login (Name, Mail, Username, Password)
+VALUES ('$Name','$Mail','$Username', '$hash')";
 
 
 if ($conn->query($sql) === TRUE) {
