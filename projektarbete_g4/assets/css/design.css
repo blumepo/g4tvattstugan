@@ -1,0 +1,31 @@
+body{
+    background-color: #99bbff;
+}
+head{
+    background-color: #e6f5ff;
+     
+}
+#header{
+    background-color: #e6f5ff;
+   
+}
+#h1{
+    background-color: #e6f5ff;
+    padding: 1em;
+    margin: 1em;
+    font-family: Arial Narrow, sans-serif;
+    text-align: center;
+}
+#form1{
+    background-color: #e6f5ff;
+    padding: 1em;
+    margin: 1em;
+    font-family: Arial Narrow, sans-serif;
+    
+}
+#form2{
+    background-color: #e6f5ff;
+    padding: 1em;
+    margin: 1em;
+    font-family: Arial Narrow, sans-serif;
+}
