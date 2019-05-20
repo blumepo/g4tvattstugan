@@ -2,20 +2,21 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="assets/css/mall.css">
-        <title></title>
+        <link rel="stylesheet" href="assets/css/design.css">
+        <script type="text/javascript" src="assets/js/javascript.js"></script>
+        <title>Tvättstugan</title>
 
     </head>
     <body>
             <div class= "header">
-                <h1 id="h1">Posta en kommentar</h1>
+                <h1 id="h1">Välkommen till din tvättstuga</h1>
             </div>
             <br/>
 
             <form id="form1" name="form1" action="process_com.php" method="_GET" onsubmit="return look()">
-                <p>Name:</p> <br></br><input type="text" name="Namn"></br>
-                <p>E-postadress:</p><br></br><input type="text" name="E-postadress"></br>
-                <p>Kommentar:</p><br></br><input id="comment" type="text" name="Kommentar"></br></br>
+                <p>Name:</p><br><input type="text" name="Namn"></br>
+                <p>E-postadress:</p></br><input type="text" name="E-postadress"></br>
+                <p>Kommentar:</p></br><input id="comment" type="text" name="Kommentar"></br></br>
                 <input type="submit" value="Skicka">
             </form>
             </br>
