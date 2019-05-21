@@ -14,9 +14,9 @@
             <br/>
 
             <form id="form1" name="form1" action="process_com.php" method="_GET" onsubmit="return look()">
-                <p>Name:</p><br><input type="text" name="Namn"></br>
-                <p>E-postadress:</p></br><input type="text" name="E-postadress"></br>
-                <p>Kommentar:</p></br><input id="comment" type="text" name="Kommentar"></br></br>
+                <p>Name:</p><input type="text" name="Namn"></br>
+                <p>E-postadress:</p><input type="text" name="E-postadress"></br>
+                <p>Kommentar:</p><input id="comment" type="text" name="Kommentar"></br></br>
                 <input type="submit" value="Skicka">
             </form>
             </br>
