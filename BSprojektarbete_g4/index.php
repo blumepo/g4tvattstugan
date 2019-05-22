@@ -2,6 +2,7 @@
 <html lang="en">
 <?php 
 session_start(); 
+
 ?>
 <head>
 
@@ -123,17 +124,13 @@ window.timekitBookingConfig = {
       </div>
       <div class="modal-body">
 	   <form name="form1" action="process_com.php" method="_GET" onsubmit="return CheckComment()">
-                <p>Name:</p>
-                <input type="text" name="Name"></br>
-                <p>E-postadress:</p>
-                <input type="text" name="Mail"></br>
                 <p>Kommentar:</p>
                 <textarea rows="4" cols="50" name="Kommentar"></textarea></br></br>
-				</form>
+				
       </div> 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Avbryt</button>
-        <button type="button" class="btn btn-primary"action="process_com.php" onclick="return CheckComment()">Skicka</button>
+        <button type="submit" class="btn btn-primary" onclick="return CheckComment()">Skicka</button>
 		</form>
       </div>
     </div>

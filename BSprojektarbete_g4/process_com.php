@@ -10,9 +10,9 @@
     </html>
 
     <?php
-
-        $Name = $_GET["Namn"];
-        $Mail = $_GET["E-postadress"];
+		session_start();
+        $Name = $_SESSION['Name'];
+        $Mail = $_SESSION['Mail'];
         $Comment = $_GET["Kommentar"];
 
         addCommentTodatabase($Name,$Mail,$Comment);
@@ -31,4 +31,5 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 }
+header( "refresh:2;url=index.php" );
 ?>

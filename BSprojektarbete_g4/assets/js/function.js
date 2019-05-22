@@ -13,49 +13,14 @@ function checkUser() {
     }
 }
 
-function checkComment()
-{
-    var valid=true;
-                if(document.form1.Namn.value.trim().length == 0)
-                { 
-                    alert("Fyll i ditt namn");
-                    valid=false;
-                }
-                if(document.form1.Epost.value=="")
-                {
-                    alert("Fyll i din epostadress");
-                    valid= false;
-                }
-                else if(document.form1.Epost.value.indexOf("@") == -1)
-                {
-                    alert("Ogiltig epost");
-                    valid= false;
-                }
-                else if(document.form1.Epost.value.indexOf("@") != -1)
-                {
-                    var check=false;
-                    for(i= (document.form1.Epost.value.indexOf("@"))+1; i<document.form1.Epost.value.length-1; i++)
-                    {
-                            if (document.form1.Epost.value[i]==".")
-                            {
-                                check=true;
-                            }
-                            
-                            if (check==false)
-                            {
-                                alert("Ogiltig epost");
-                                valid=false;
-                            }
-                    }
-                }
-                if(document.form1.Kommentar.value.trim().length ==0)
-                {
-                    alert("Skriv ditt inlägg");
-                    valid= false;
-                }
-                return valid;
+function CheckComment() {
+ if (document.form1.Kommentar.value.trim().length == 0) {
+    alert("Du behöver skriva en kommentar");
+    return false;
+} else {
+    document.form1.submit();
 }
-
+}
 
 function CheckReg() {
     if (document.form_reg.Name.value.trim() == "" || document.form_reg.Mail.value.trim() == "" || document.form_reg.Password.value.trim() == "") {
