@@ -22,7 +22,7 @@ function addToDatabase($Name,$Mail,$Username, $Password)
 include "database.php";
      
 $salt = uniqid();
-$hash = sha1($Password, $salt);
+$hash = sha1($Password.$salt);
 $sql = "INSERT INTO User_login (Name, Mail, Username, Password, Salt)
 VALUES ('$Name','$Mail','$Username', '$hash', '$salt')";
 
