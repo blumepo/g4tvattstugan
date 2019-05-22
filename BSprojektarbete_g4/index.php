@@ -32,7 +32,8 @@ session_start();
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Tvättstugan</a>
+      <a class="navbar-brand" href="index.php"><img src="http://atlclean.com/wp-content/uploads/2015/01/home-icon-1.png" width="60" height="60" title="Home button" alt="Home"></a>
+      
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Registrera">
   Registrera
