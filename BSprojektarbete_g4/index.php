@@ -70,10 +70,11 @@ session_start();
 
 <?php 
 if($_SESSION['Mail'] == 'test@test.se'){
-echo "<div id="bookingjs" style="display: visible;"></div>";
+echo "<div id=\"bookingjs\" style=\"display: visible;\"></div>";
 } else {
- echo "<div id="bookingjs" style="display: none;"></div>";
+ echo ("<div id=\"bookingjs\" style=\"display: none;\"></div>");
 } ?>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
