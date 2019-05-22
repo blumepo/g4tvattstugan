@@ -119,20 +119,18 @@ window.timekitBookingConfig = {
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-	   <form name="form_reg" action="process_reg.php" method="_GET" onsubmit="return CheckReg()">
-                        <p>E-postadress:</p>
-                <input type="text" name="Mail"></br>
+	   <form name="form1" action="process_com.php" method="_GET" onsubmit="return CheckComment()">
                 <p>Name:</p>
                 <input type="text" name="Name"></br>
-                <p>Password:</p>
-                <input type="text" name="Password"></br>
-                <p>Repeat Password:</p>
-                <input type="text" name="Password2"></br></br>
+                <p>E-postadress:</p>
+                <input type="text" name="Mail"></br>
+                <p>Kommentar:</p>
+                <textarea rows="4" cols="50" name="Kommentar"></textarea></br></br>
 				</form>
       </div> 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Avbryt</button>
-        <button type="button" class="btn btn-primary" onclick="return CheckReg()">Skicka</button>
+        <button type="button" class="btn btn-primary" onclick="return CheckComment()">Skicka</button>
 		</form>
       </div>
     </div>
@@ -158,6 +156,27 @@ window.timekitBookingConfig = {
         </div>
         </div>
         <!--här ska tidigare kommentarer stå(showComments-filen)-->
+<?php 
+      include "database.php";
+
+      $sql = "SELECT * FROM Comments";  
+      $result=$conn->query($sql);
+
+      if ($result->num_rows > 0) 
+      {
+        while($row = $result->fetch_assoc())
+        {
+          echo "<p><b>Namn:</b> ". $row["name"]. "</br><b>E-post:</b> ". $row["email"]. "</br><b>Kommentar:</b> ". $row["comment"] . "<br></p>";
+        }
+      }
+      else 
+      {
+          echo "Inga kommentarer hittades";
+      }
+
+$conn->close();
+?>
+
       </div>
     
   </section>
