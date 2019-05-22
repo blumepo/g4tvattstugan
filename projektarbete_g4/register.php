@@ -16,8 +16,6 @@
                 <input type="text" name="Mail"></br>
                 <p>Name:</p>
                 <input type="text" name="Name"></br>
-                <p>Username:</p>
-                <input type="text" name="Username"></br>
                 <p>Password:</p>
                 <input type="text" name="Password"></br>
                 <p>Repeat Password:</p>
