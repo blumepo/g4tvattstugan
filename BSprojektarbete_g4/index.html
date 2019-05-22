@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <script type="text/javascript" src="assets/js/function.js"></script>
 
   <title>Tvättstugan</title>
 
@@ -47,17 +48,16 @@
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <form>
             <div class="form-row">
-              <div class="col-11 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Skriv in din mail.">
+              <div class="col-11 col-md-9 mb-2 mb-md-3">
+                <input type="email" class="form-control form-control-lg" placeholder="E-mail">
               </div>
               </br>
               <div class="col-11 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Skriv in din mail.">
+                <input type="email" class="form-control form-control-lg" placeholder="Lösenord">
               </div>
               <div class="col-12 col-md-3">
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Registrera
-</button>
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">  Logga In  
+                </button>
               </div>
             </div>
           </form>
@@ -81,15 +81,25 @@ window.timekitBookingConfig = {
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Registrera dig</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-        ...
-      </div>
+	   <form name="form_reg" action="process_reg.php" method="_GET" onsubmit="return CheckReg()">
+                        <p>E-postadress:</p>
+                <input type="text" name="Mail"></br>
+                <p>Name:</p>
+                <input type="text" name="Name"></br>
+                <p>Password:</p>
+                <input type="text" name="Password"></br>
+                <p>Repeat Password:</p>
+                <input type="text" name="Password2"></br></br>
+				</form>
+      </div> 
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Avbryt</button>
+        <button type="button" class="btn btn-primary" onclick="return CheckReg()">Skicka</button>
+		</form>
       </div>
     </div>
   </div>
