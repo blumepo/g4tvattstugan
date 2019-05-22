@@ -3,30 +3,34 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="assets/css/design.css">
-        <script type="text/javascript" src="assets/js/javascript.js"></script>
+        <script type="text/javascript" src="assets/js/function.js"></script>
         <title>Tvättstugan</title>
-
     </head>
     <body>
-            <div class= "header">
-                <h1 id="h1">Välkommen till din tvättstuga</h1>
-            </div>
-            <br/>
-
-            <form id="form1" name="form1" action="process_com.php" method="_GET" onsubmit="return look()">
-                <p>Name:</p><input type="text" name="Namn"></br>
-                <p>E-postadress:</p><input type="text" name="E-postadress"></br>
-                <p>Kommentar:</p><input id="comment" type="text" name="Kommentar"></br></br>
+        <div class= "header">
+            <h1 id="h1">Välkommen till din tvättstuga</h1>
+        </div>
+        <div class= "forms">
+        
+            <form id="form_login" name="form_login" action="login_process.php" method="_GET" onsubmit="return check()">
+                <h2 id="h2">Logga in eller registrera dig</h2>
+                <p>E-postadress:</p><input type="text" name="Mail"></br>
+                <p>Password:</p><input type="text" name="Password"></br></br>
+                <input type="submit" value="logga in">
+            </form>
+        
+    
+            <form id="form1" name="form1" action="process_com.php" method="_GET" onsubmit="return checkComment()">
+                <h2 id="h2">Posta en kommentar i forumet</h2>
+                <p>Namn:</p><input type="text" name="Namn"></br>
+                <p>E-postadress:</p><input type="text" name="Epost"></br>
+                <p>Kommentar:</p><input type="text" name="Kommentar"></br></br>
                 <input type="submit" value="Skicka">
             </form>
-            </br>
-
+           
             <form id="form2" name="form2" action="showComments.php">
                 <input type="submit" value="Visa tidigare kommentarer">
             </form>
-
-<script src="assets/js/function.js">
-look();
-</script>
+        </div>
     </body>
 </html>
