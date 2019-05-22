@@ -8,12 +8,13 @@
     <body>
 
 <?php
+login();
 function login()
 {
     include "database.php";
 
-	$Mail = mysqli_real_escape_string($conn, $_get['Mail']);
-	$Password = mysqli_real_escape_string($conn, $_get['Password']);
+	$Mail = mysqli_real_escape_string($conn, $_GET['Mail']);
+	$Password = mysqli_real_escape_string($conn, $_GET['Password']);
 
 	$sql_q = "SELECT * FROM User_login WHERE Mail = '$Mail'";
 
