@@ -8,7 +8,7 @@
     </head>
     <body>
         <div class= "header">
-            <h1 id="h1">Välkommen till din tvättstuga</h1>
+            <h1 id="h1">Välkommen till din tvättstugan</h1>
         </div>
         <div class= "forms">
         
