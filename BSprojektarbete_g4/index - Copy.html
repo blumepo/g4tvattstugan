@@ -7,11 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <script type="text/javascript" src="assets/js/function.js"></script>
 
   <title>Tvättstugan</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -30,7 +31,7 @@
     <div class="container">
       <a class="navbar-brand" href="#">Tvättstugan</a>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Registrera">
   Registrera
 </button>
     </div>
@@ -42,16 +43,21 @@
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
-          <h1 class="mb-5">Gå med i din studenttvättstuga för att se och boka lediga tvättider</h1>
+          <h1 class="mb-5">Välkommen till din tvättstuga!</br>Logga in eller registrera dig för att se och boka tvättider</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
+          <form id="form_to_login" name="form_to_reg" action="login_process.php" method="_GET" onsubmit="return checkUser()">
             <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Skriv in din mail.">
+              <div class="col-11 col-md-9 mb-2 mb-md-3">
+                <input type="email" class="form-control form-control-lg" placeholder="E-mail" name="Mail">
+              </div>
+              </br>
+              <div class="col-11 col-md-9 mb-2 mb-md-0">
+                <input type="password" class="form-control form-control-lg" placeholder="Lösenord" name="Password">
               </div>
               <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Registrera</button>
+                <button type="submit" class="btn btn-primary btn-lg" onclick="return checkUser()">  Logga In  
+                </button>
               </div>
             </div>
           </form>
@@ -59,30 +65,75 @@
       </div>
     </div>
   </header>
+
 <div id="bookingjs"></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
 <script src="https://cdn.timekit.io/booking-js/v2/booking.min.js" defer></script>
 <script>
 window.timekitBookingConfig = {
   app_key: 'test_widget_key_uVw3ylo5dPWuNteYnLyHZK84ToJBKgtW',
-  project_id: 'f3b9a208-615d-4def-bcc1-8bb46b7b8500'
+  project_id: '53e76db3-f061-4e19-8b7b-9b88ace13c5c'
 }
 </script>
 
+<?php if($_SESSION['usr'] == 'xyz'){
+    //Put the buttons which you want to display on when the use is XYZ.
+} else {
+    //Put the buttons which you want to display on when the use is ABC.
+} ?>
+
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="Registrera" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Registrera dig</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-        ...
-      </div>
+	   <form name="form_reg" action="process_reg.php" method="_GET" onsubmit="return CheckReg()">
+                        <p>E-postadress:</p>
+                <input type="text" name="Mail"></br>
+                <p>Namn:</p>
+                <input type="text" name="Name"></br>
+                <p>Lösenord:</p>
+                <input type="text" name="Password"></br>
+                <p>Upprepa lösenord:</p>
+                <input type="text" name="Password2"></br></br>
+				</form>
+      </div> 
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Avbryt</button>
+        <button type="button" class="btn btn-primary" onclick="return CheckReg()">Skicka</button>
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="Kommentera" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Posta Kommentar</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+	   <form name="form_reg" action="process_reg.php" method="_GET" onsubmit="return CheckReg()">
+                        <p>E-postadress:</p>
+                <input type="text" name="Mail"></br>
+                <p>Name:</p>
+                <input type="text" name="Name"></br>
+                <p>Password:</p>
+                <input type="text" name="Password"></br>
+                <p>Repeat Password:</p>
+                <input type="text" name="Password2"></br></br>
+				</form>
+      </div> 
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Avbryt</button>
+        <button type="button" class="btn btn-primary" onclick="return CheckReg()">Skicka</button>
+		</form>
       </div>
     </div>
   </div>
@@ -93,62 +144,22 @@ window.timekitBookingConfig = {
   <section class="features-icons bg-light text-center">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-12">
           <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
               <i class="icon-screen-desktop m-auto text-primary"></i>
             </div>
-            <h3>Fully Responsive</h3>
-            <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
+            <h3>Forum</h3>
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Kommentera">
+              Posta en kommentar
+            </button>
           </div>
+          <input type="text" placeholder=" Sök i forum..">
         </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-layers m-auto text-primary"></i>
-            </div>
-            <h3>Bootstrap 4 Ready</h3>
-            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
-          </div>
         </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-check m-auto text-primary"></i>
-            </div>
-            <h3>Easy to Use</h3>
-            <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
-          </div>
-        </div>
+        <!--här ska tidigare kommentarer stå(showComments-filen)-->
       </div>
-    </div>
-  </section>
-
-
-
-
-  <!-- Call to Action -->
-  <section class="call-to-action text-white text-center">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <h2 class="mb-4">Ready to get started? Sign up now!</h2>
-        </div>
-        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
-            <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-              </div>
-              <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+    
   </section>
 
   <!-- Footer -->
@@ -158,11 +169,11 @@ window.timekitBookingConfig = {
         <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
           <ul class="list-inline mb-2">
             <li class="list-inline-item">
-              <a href="#">About</a>
+              <a href="#">Om Oss</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <a href="#">Contact</a>
+              <a href="#">Kontakt</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">

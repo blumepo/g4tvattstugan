@@ -613,8 +613,10 @@ pre code {
 .col-xl-auto {
   position: relative;
   width: 100%;
+  padding-top: 15px;
   padding-right: 15px;
   padding-left: 15px;
+  padding-bottom: 15px;
 }
 
 .col {
@@ -7913,7 +7915,10 @@ button.bg-dark:focus {
   content: "";
   background-color: rgba(0, 0, 0, 0);
 }
-
+.pontus{
+  font-size: 12px;
+  margin: 0 !important;
+}
 .m-0 {
   margin: 0 !important;
 }

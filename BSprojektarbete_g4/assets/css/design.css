@@ -1,0 +1,54 @@
+body{
+    background-color: #99bbff;
+    background-image: url(https://hdwallpaperfx.com/wp-content/uploads/2016/02/Fealds-Sky-Meadow-Grass.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+head{
+    background-color: #e6f5ff;
+     
+}
+#header{
+    background-color: #e6f5ff;
+   
+}
+#h1{
+    background-color: #e6f5ff;
+    padding: 1em;
+    margin: 1em;
+    font-family: Arial Narrow, sans-serif;
+    text-align: center;
+    border-radius: 10px;
+}
+#h2{
+    background-color: #e6f5ff;
+    margin: 1em;
+    font-family: Arial Narrow, sans-serif;
+    text-align: left;
+    border-radius: 10px;
+}
+#form1{
+    background-color: #e6f5ff;
+    padding: 1em;
+    margin: 1em;
+    padding-left: 2em;
+    padding-bottom: 2em;
+    font-family: Arial Narrow, sans-serif;
+    border-radius: 10px;
+}
+#form2{
+    background-color: #e6f5ff;
+    padding: 1em;
+    margin: 1em;
+    font-family: Arial Narrow, sans-serif;
+    border-radius: 10px;
+}
+#form_login{
+    background-color: #e6f5ff;
+    padding: 1em;
+    padding-left: 2em;
+    padding-bottom: 2em;
+    margin: 1em;
+    font-family: Arial Narrow, sans-serif;
+    border-radius: 10px;
+}
