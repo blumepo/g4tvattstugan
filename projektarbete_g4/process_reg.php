@@ -20,17 +20,8 @@
  <?php
 function addToDatabase($Name,$Mail,$Username, $Password)
  {
-     $server  = "dbtrain.im.uu.se";
-     $username = "dbtrain_851";
-     $password = "todopx";
-     $dbname = "dbtrain_851";
-
-     // Create connection
-     $conn = new mysqli($server, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+     include "database.php"
+     
 $hash = password_hash($Password, PASSWORD_DEFAULT);
 $sql = "INSERT INTO User_login (Name, Mail, Username, Password)
 VALUES ('$Name','$Mail','$Username', '$hash')";
