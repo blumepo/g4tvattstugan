@@ -104,7 +104,7 @@ function CheckReg()
                             
             if (check==false)
             {
-                alert("Ogiltig epost");
+                alert("Ogiltig epost!");
                 valid=false;
             }
         }
