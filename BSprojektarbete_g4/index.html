@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <script type="text/javascript" src="assets/js/function.js"></script>
 
   <title>Tvättstugan</title>
 
@@ -81,14 +82,24 @@ window.timekitBookingConfig = {
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Registrera dig</h4>
       </div>
       <div class="modal-body">
-        ...
-      </div>
+	   <form name="form_reg" action="process_reg.php" method="_GET" onsubmit="return CheckReg()">
+                        <p>E-postadress:</p>
+                <input type="text" name="Mail"></br>
+                <p>Name:</p>
+                <input type="text" name="Name"></br>
+                <p>Password:</p>
+                <input type="text" name="Password"></br>
+                <p>Repeat Password:</p>
+                <input type="text" name="Password2"></br></br>
+				</form>
+      </div> 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" onclick="return CheckReg()">Save changes</button>
+		</form>
       </div>
     </div>
   </div>
