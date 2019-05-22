@@ -34,8 +34,8 @@ if ($conn->connect_error) {
         $Mail = $_GET["Mail"];
         $Username = $_GET["Username"];
         $Password = $_GET["Password"];
-	 
-	 $salt = uniqid();
+
+$salt = uniqid();
 
 $hash = sha1($Password, $salt);
 $sql = "INSERT INTO User_login (Name, Mail, Username, Password, Salt)
