@@ -3,14 +3,14 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="assets/css/mall.css">
-        <title></title>
+        <title>process</title>
 
     </head>
     <body>
-    </body>
-    </html>
+
 
     <?php
+	login();
 	function login(){
 
     $server  = "dbtrain.im.uu.se";
@@ -23,7 +23,6 @@
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);}
-
 
 	$Mail = mysqli_real_escape_string($conn, $_get['Mail']);
 	$Password = mysqli_real_escape_string($conn, $_get['Password']);
@@ -60,3 +59,6 @@ if ($conn->connect_error) {
 	}
 
     ?>
+	
+	    </body>
+    </html>

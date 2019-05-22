@@ -1,9 +1,6 @@
 <!DOCTYPE HTML>
 <?php
-        $Name = $_GET["Name"];
-        $Mail = $_GET["Mail"];
-        $Username = $_GET["Username"];
-        $Password = $_GET["Password"];
+
 
         addTodatabase($Name,$Mail,$Username, $Password);
 
@@ -28,12 +25,21 @@ function addToDatabase($Name,$Mail,$Username, $Password)
      // Create connection
      $conn = new mysqli($server, $username, $password, $dbname);
 
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$hash = password_hash($Password, PASSWORD_DEFAULT);
-$sql = "INSERT INTO User_login (Name, Mail, Username, Password)
-VALUES ('$Name','$Mail','$Username', '$hash')";
+
+	    $Name = $_GET["Name"];
+        $Mail = $_GET["Mail"];
+        $Username = $_GET["Username"];
+        $Password = $_GET["Password"];
+	 
+	 $salt = uniqid();
+
+$hash = sha1($Password, $salt);
+$sql = "INSERT INTO User_login (Name, Mail, Username, Password, Salt)
+VALUES ('$Name','$Mail','$Username', '$hash', '$salt')";
 
 
 if ($conn->query($sql) === TRUE) {
