@@ -133,7 +133,7 @@ window.timekitBookingConfig = {
       </div> 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Avbryt</button>
-        <button type="button" class="btn btn-primary" onclick="return CheckComment()">Skicka</button>
+        <button type="button" class="btn btn-primary"action="process_com.php" onclick="return CheckComment()">Skicka</button>
 		</form>
       </div>
     </div>
