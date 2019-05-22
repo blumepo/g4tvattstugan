@@ -8,7 +8,7 @@
     </head>
     <body>
         <div class= "header">
-            <h1 id="h1">Välkommen till din tvättstuga</h1>
+            <h1 id="h1">Välkommen till din tvättstugan</h1>
         </div>
         <div class= "forms">
         
@@ -35,5 +35,17 @@
                 <input type="submit" value="Visa tidigare kommentarer">
             </form>
         </div>
+
+        
+<div id="bookingjs"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
+<script src="https://cdn.timekit.io/booking-js/v2/booking.min.js" defer></script>
+<script>
+window.timekitBookingConfig = {
+  app_key: 'test_widget_key_F7jwV33ZdIHpOvaMd8Day1GVX0Ka6VLy',
+  project_id: '959fa19d-c0e8-4246-81c6-28224759954e'
+}
+</script>
+
     </body>
 </html>
