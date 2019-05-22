@@ -10,16 +10,27 @@
         <div class= "header">
             <h1 id="h1">Välkommen till din tvättstuga</h1>
         </div>
-
-        <form id="form1" name="form1" action="process_com.php" method="_GET" onsubmit="return checkComment()">
+        <div class= "forms">
+        
+            <form id="form_login" name="form_login" action="login_process.php" method="_GET" onsubmit="return check()">
+                <h2 id="h2">Logga in eller registrera dig</h2>
+                <p>E-postadress:</p><input type="text" name="Mail"></br>
+                <p>Password:</p><input type="text" name="Password"></br></br>
+                <input type="submit" value="logga in">
+            </form>
+        
+    
+            <form id="form1" name="form1" action="process_com.php" method="_GET" onsubmit="return checkComment()">
+                <h2 id="h2">Posta en kommentar i forumet</h2>
                 <p>Namn:</p><input type="text" name="Namn"></br>
                 <p>E-postadress:</p><input type="text" name="Epost"></br>
                 <p>Kommentar:</p><input type="text" name="Kommentar"></br></br>
                 <input type="submit" value="Skicka">
-        </form>
+            </form>
            
-        <form id="form2" name="form2" action="showComments.php">
+            <form id="form2" name="form2" action="showComments.php">
                 <input type="submit" value="Visa tidigare kommentarer">
-        </form>
+            </form>
+        </div>
     </body>
 </html>

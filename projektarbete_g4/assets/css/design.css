@@ -20,16 +20,34 @@ head{
     text-align: center;
     border-radius: 10px;
 }
+#h2{
+    background-color: #e6f5ff;
+    margin: 1em;
+    font-family: Arial Narrow, sans-serif;
+    text-align: left;
+    border-radius: 10px;
+}
 #form1{
     background-color: #e6f5ff;
     padding: 1em;
     margin: 1em;
+    padding-left: 2em;
+    padding-bottom: 2em;
     font-family: Arial Narrow, sans-serif;
     border-radius: 10px;
 }
 #form2{
     background-color: #e6f5ff;
     padding: 1em;
+    margin: 1em;
+    font-family: Arial Narrow, sans-serif;
+    border-radius: 10px;
+}
+#form_login{
+    background-color: #e6f5ff;
+    padding: 1em;
+    padding-left: 2em;
+    padding-bottom: 2em;
     margin: 1em;
     font-family: Arial Narrow, sans-serif;
     border-radius: 10px;
