@@ -19,7 +19,7 @@ addTodatabase($Name,$Mail,$Username, $Password);
 
 function addToDatabase($Name,$Mail,$Username, $Password)
 {
-include "database.php"
+include "database.php";
      
 $salt = uniqid();
 $hash = sha1($Password, $salt);
