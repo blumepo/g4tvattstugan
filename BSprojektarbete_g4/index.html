@@ -47,11 +47,17 @@
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <form>
             <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
+              <div class="col-11 col-md-9 mb-2 mb-md-0">
+                <input type="email" class="form-control form-control-lg" placeholder="Skriv in din mail.">
+              </div>
+              </br>
+              <div class="col-11 col-md-9 mb-2 mb-md-0">
                 <input type="email" class="form-control form-control-lg" placeholder="Skriv in din mail.">
               </div>
               <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Registrera</button>
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Registrera
+</button>
               </div>
             </div>
           </form>
@@ -59,13 +65,14 @@
       </div>
     </div>
   </header>
+
 <div id="bookingjs"></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
 <script src="https://cdn.timekit.io/booking-js/v2/booking.min.js" defer></script>
 <script>
 window.timekitBookingConfig = {
   app_key: 'test_widget_key_uVw3ylo5dPWuNteYnLyHZK84ToJBKgtW',
-  project_id: 'f3b9a208-615d-4def-bcc1-8bb46b7b8500'
+  project_id: '53e76db3-f061-4e19-8b7b-9b88ace13c5c'
 }
 </script>
 
