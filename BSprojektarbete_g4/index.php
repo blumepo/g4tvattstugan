@@ -69,14 +69,11 @@ session_start();
   </header>
 
 <?php 
-if($_SESSION['Mail'] == 'test@test.se'){
+if(isset($_SESSION['Mail'])){
 echo "<div id=\"bookingjs\" style=\"display: visible;\"></div>";
 } else {
  echo ("<div id=\"bookingjs\" style=\"display: none;\"></div>");
 } ?>
-
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
 <script src="https://cdn.timekit.io/booking-js/v2/booking.min.js" defer></script>
 <script>
@@ -144,11 +141,16 @@ window.timekitBookingConfig = {
     </div>
   </div>
 </div>
-    
+  
 
   <!-- Icons Grid -->
   <section class="features-icons bg-light text-center">
-    <div class="container">
+    <?php 
+if(isset($_SESSION['Mail'])){
+echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
+} else {
+ echo ("<div id=\"kommentarer\" class=\"container\" style=\"display: none;\">");
+} ?>  
       <div class="row">
         <div class="col-lg-12">
           <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
