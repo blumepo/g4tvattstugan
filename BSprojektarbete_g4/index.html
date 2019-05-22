@@ -46,17 +46,17 @@
           <h1 class="mb-5">Välkommen till din tvättstuga!</br>Logga in eller registrera dig för att se och boka tvättider</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
+          <form id="form_to_reg" name="form_to_reg" action="login_process.php" method="_GET" onsubmit="return checkUser()">
             <div class="form-row">
               <div class="col-11 col-md-9 mb-2 mb-md-3">
-                <input type="email" class="form-control form-control-lg" placeholder="E-mail">
+                <input type="email" class="form-control form-control-lg" placeholder="E-mail" name="Mail">
               </div>
               </br>
               <div class="col-11 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Lösenord">
+                <input type="email" class="form-control form-control-lg" placeholder="Lösenord" name="Password">
               </div>
               <div class="col-12 col-md-3">
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">  Logga In  
+                <button type="button" class="btn btn-primary btn-lg" onclick="return checkUser()">  Logga In  
                 </button>
               </div>
             </div>
@@ -93,6 +93,34 @@ window.timekitBookingConfig = {
                 <p>Lösenord:</p>
                 <input type="text" name="Password"></br>
                 <p>Upprepa lösenord:</p>
+                <input type="text" name="Password2"></br></br>
+				</form>
+      </div> 
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Avbryt</button>
+        <button type="button" class="btn btn-primary" onclick="return CheckReg()">Skicka</button>
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Registrera dig</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+	   <form name="form_reg" action="process_reg.php" method="_GET" onsubmit="return CheckReg()">
+                        <p>E-postadress:</p>
+                <input type="text" name="Mail"></br>
+                <p>Name:</p>
+                <input type="text" name="Name"></br>
+                <p>Password:</p>
+                <input type="text" name="Password"></br>
+                <p>Repeat Password:</p>
                 <input type="text" name="Password2"></br></br>
 				</form>
       </div> 
