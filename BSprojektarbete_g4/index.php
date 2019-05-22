@@ -30,17 +30,30 @@ session_start();
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-light bg-light static-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.php"><img src="http://atlclean.com/wp-content/uploads/2015/01/home-icon-1.png" width="60" height="60" title="Home button" alt="Home"></a>
+  <?php
+  if(isset($_SESSION['Mail'])){
+echo "<nav class=\"navbar navbar-light bg-light static-top\">
+    <div class=\"container\">
+      <a class=\"navbar-brand\" href=\"index.php\"><img src=\"https://cali-laundry.com/wp-content/uploads/2018/06/Cali_Laundry-Laundromat-Anaheim-Icon-Washing_Machine-Blue.png\" width=\"60\" height=\"60\" title=\"Home button\" alt=\"Home\"></a>
       
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Registrera">
+<button type=\"submit\" class=\"btn btn-primary btn-lg\" onclick=\"return LogOut()\">
+  Logga Ut
+</button>
+    </div>
+  </nav>";
+} else {
+ echo "<nav class=\"navbar navbar-light bg-light static-top\">
+    <div class=\"container\">
+      <a class=\"navbar-brand\" href=\"index.php\"><img src=\"https://cali-laundry.com/wp-content/uploads/2018/06/Cali_Laundry-Laundromat-Anaheim-Icon-Washing_Machine-Blue.png\" width=\"60\" height=\"60\" title=\"Home button\" alt=\"Home\"></a>
+      
+<!-- Button trigger modal -->
+<button type=\"button\" class=\"btn btn-primary btn-lg\" data-toggle=\"modal\" data-target=\"#Registrera\">
   Registrera
 </button>
     </div>
-  </nav>
-
+  </nav>";
+} ?>  
   <!-- Masthead -->
   <header class="masthead text-white text-center">
     <div class="overlay"></div>
@@ -187,8 +200,10 @@ $conn->close();
     
   </section>
 
-  <!-- Footer -->
-  <footer class="footer bg-light">
+
+
+  <footer class="call-to-action text-white text-center">
+    <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
@@ -209,7 +224,7 @@ $conn->close();
               <a href="#">Privacy Policy</a>
             </li>
           </ul>
-          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
+          <p class="small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
         </div>
         <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
           <ul class="list-inline mb-0">
