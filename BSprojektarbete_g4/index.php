@@ -76,6 +76,12 @@ window.timekitBookingConfig = {
 }
 </script>
 
+<?php if(isset($_SESSION['Mail'])){
+    //Put the buttons which you want to display on when the use is XYZ.
+} else {
+    //Put the buttons which you want to display on when the use is ABC.
+} ?>
+
 <!-- Modal -->
 <div class="modal fade" id="Registrera" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
