@@ -33,16 +33,17 @@ function login()
 		echo("Det lyckades!");
 		session_start();
 		$_SESSION['Mail'] = $row['Mail'];
-		$_SESSION['Username'] = $row['Username'];
-		header("url=index.php");
+		$_SESSION['Name'] = $row['Name'];
+		
 	}
 	else
 	{
 		echo("Felaktigt användarnamn eller lösenord");
-		header("url=index.php");
+		
 	}
-
+$conn->close();
 }
+header( "refresh:2;url=index.html" );
 ?>
 	    </body>
     </html>

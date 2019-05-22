@@ -1,39 +1,16 @@
-function checkUser()
-{
-    var valid=true;
-    if(document.form_login.Mail.value.trim().length == 0)
-    {
-        alert("Fyll i epostadress");
-        valid=false;
+function checkUser() {
+    if (document.form_to_login.Mail.value.trim() == "" || document.form_to_login.Password.value.trim() == "") {
+        alert("Du behöver fylla i alla fält för att registerar dig");
+        return false;
+    } else if (!document.form_to_login.Mail.value.includes(".") || !document.form_to_login.Mail.value.includes("@")) {
+        alert("Du behöver fylla i en giltig e-postadress för att logga in");
+        return false;
+    } else if (document.form_login.Password.value.trim().length == 0) {
+        alert("Du behöver fylla i ett lösenord");
+        return false;
+    } else {
+        document.form_to_login.submit();
     }
-    else if(document.form_login.Mail.value.indexOf("@") == -1)
-    {
-        alert("Ogiltig epost");
-        valid=false;
-    }
-    else if(document.form_login.Mail.value.indexOf("@") != -1)
-    {
-        var check=false;
-        for(i= (document.form_login.Mail.value.indexOf("@"))+1; i<document.form_login.Mail.value.length-1; i++)
-        {
-            if (document.form_login.Mail.value[i]==".")
-            {
-                check=true;
-            }
-                            
-            if (check==false)
-            {
-                alert("Ogiltig epost");
-                valid=false;
-            }
-        }
-    }
-    if(document.form_login.Password.value.trim().length == 0)
-    {
-        alert("Fyll i ett lösenord");
-        valid=false;
-    }
-    return valid;
 }
 
 function checkComment()
@@ -91,3 +68,5 @@ function CheckReg() {
         document.form_reg.submit();
     }
 }
+
+

@@ -46,17 +46,17 @@
           <h1 class="mb-5">Gå med i din studenttvättstuga för att se och boka lediga tvättider</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form id="form_to_reg" name="form_to_reg" action="login_process.php" method="_GET" onsubmit="return checkUser()">
+          <form id="form_to_login" name="form_to_reg" action="login_process.php" method="_GET" onsubmit="return checkUser()">
             <div class="form-row">
               <div class="col-11 col-md-9 mb-2 mb-md-3">
                 <input type="email" class="form-control form-control-lg" placeholder="E-mail" name="Mail">
               </div>
               </br>
               <div class="col-11 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Lösenord" name="Password">
+                <input type="password" class="form-control form-control-lg" placeholder="Lösenord" name="Password">
               </div>
               <div class="col-12 col-md-3">
-                <button type="button" class="btn btn-primary btn-lg" onclick="return checkUser()">  Logga In  
+                <button type="submit" class="btn btn-primary btn-lg" onclick="return checkUser()">  Logga In  
                 </button>
               </div>
             </div>
