@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php 
+session_start(); 
+?>
 <head>
 
   <meta charset="utf-8">
@@ -66,7 +68,15 @@
     </div>
   </header>
 
-<div id="bookingjs"></div>
+<?php 
+if($_SESSION['Mail'] == 'test@test.se'){
+echo "<div id=\"bookingjs\" style=\"display: visible;\"></div>";
+} else {
+ echo ("<div id=\"bookingjs\" style=\"display: none;\"></div>");
+} ?>
+
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
 <script src="https://cdn.timekit.io/booking-js/v2/booking.min.js" defer></script>
 <script>
@@ -76,11 +86,7 @@ window.timekitBookingConfig = {
 }
 </script>
 
-<?php if(isset($_SESSION['Mail'])){
-    //Put the buttons which you want to display on when the use is XYZ.
-} else {
-    //Put the buttons which you want to display on when the use is ABC.
-} ?>
+
 
 <!-- Modal -->
 <div class="modal fade" id="Registrera" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
