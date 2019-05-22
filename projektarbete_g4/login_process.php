@@ -3,12 +3,9 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="assets/css/design.css">
-        <title></title>
-
+        <title>process</title>
     </head>
     <body>
-    </body>
-    </html>
 
 <?php
 function login()
@@ -54,3 +51,6 @@ function login()
 
 }
 ?>
+	    </body>
+    </html>
+
