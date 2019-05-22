@@ -2,63 +2,56 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="assets/css/mall.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/design.css">
         <title>process</title>
-
     </head>
     <body>
 
+<?php
+login();
+function login()
+{
+    include "database.php";
 
-    <?php
-	login();
-	function login(){
-
-    $server  = "dbtrain.im.uu.se";
-     $username = "dbtrain_851";
-     $password = "todopx";
-     $dbname = "dbtrain_851";
-
-     // Create connection
-     $conn = new mysqli($server, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);}
-
-	$Mail = mysqli_real_escape_string($conn, $_get['Mail']);
-	$Password = mysqli_real_escape_string($conn, $_get['Password']);
+	$Mail = mysqli_real_escape_string($conn, $_GET['Mail']);
+	$Password = mysqli_real_escape_string($conn, $_GET['Password']);
 
 	$sql_q = "SELECT * FROM User_login WHERE Mail = '$Mail'";
 
 	$result=mysqli_query($conn,$sql_q);
 
 	if($result){
-	echo("funkar");}
+	echo("Funkar");}
 
 	$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-	if($row['Mail']===!$Mail){
+	if($row['Mail']===!$Mail)
+	{
 		echo("Felaktig Mail");
 		$conn->close();
 	}
+
 	$salt = $row['Salt'];
 	$passwordref = $row['Password'];
 
 	$hashpass = sha1($Password.$salt);
 
-	if($hashpass === $passwordref){
-	echo("Det lyckades!");
-	session_start();
-	$_SESSION['Mail'] = $row['Mail'];
-	$_SESSION['Username'] = $row['Username'];
-	header("refresh:2;url=http://localhost/HielleBergstromLevi/git/g4tvattstugan/projektarbete_g4/index.php");
-	}else{
-	echo("Felaktigt användarnamn eller lösenord");
-	header("refresh:2; url=http://localhost/HielleBergstromLevi/git/g4tvattstugan/projektarbete_g4/login.php");
-
+	if($hashpass === $passwordref)
+	{
+		echo("Det lyckades!");
+		session_start();
+		$_SESSION['Mail'] = $row['Mail'];
+		$_SESSION['Username'] = $row['Username'];
+		header("refresh:2;url=http://localhost/HielleBergstromLevi/git/g4tvattstugan/projektarbete_g4/index.php");
 	}
+	else
+	{
+		echo("Felaktigt anvï¿½ndarnamn eller lï¿½senord");
+		header("refresh:2; url=http://localhost/HielleBergstromLevi/git/g4tvattstugan/projektarbete_g4/login.php");
 	}
 
-    ?>
-	
+}
+?>
 	    </body>
     </html>
+

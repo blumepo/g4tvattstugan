@@ -3,11 +3,9 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="assets/css/mall.css">
-        <title></title>
-
-    </head>
+        <title>Tvättstugan</title>
+ </head>
     <body>
-    <h1>Min hemsida</p>
     </body>
     </html>
 
@@ -21,24 +19,14 @@
         
 function addCommentToDatabase($Name,$Mail,$Comment)
  {
-     $server  = "dbtrain.im.uu.se";
-     $username = "dbtrain_851";
-     $password = "todopx";
-     $dbname = "dbtrain_851";
-
-     $conn = new mysqli($server, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "Connection Worked";
+     include "database.php";
 
 $sql = "INSERT INTO Comments (name,email,comment) VALUES ('$Name','$Mail','$Comment')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New comment posted successfully";
+    echo "Din kommentar har postats i forumet";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Något fick fel: " . $sql . "<br>" . $conn->error;
 }
 
 $conn->close();

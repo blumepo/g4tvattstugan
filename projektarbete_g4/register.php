@@ -11,13 +11,18 @@
             <h1 id="h1">Registrera dig</h1>
         </div>
    
-        <form name="form1" action="process.php" method="_GET" onsubmit="return check()">
-                E-postadress:<br></br><input type="text" name="Mail"></br>
-                Name: <br></br><input type="text" name="Name"></br>
-                Username:<br></br><input type="text" name="Username"></br>
-                Password:<br></br><input type="text" name="Password"></br>
-                Repeat Password:<br></br><input type="text" name="Password2"></br>
-                <input type="submit" name="submit">
+        <form name="form_reg" action="process_reg.php" method="_GET" onsubmit="return CheckReg()">
+                <p>E-postadress:</p>
+                <input type="text" name="Mail"></br>
+                <p>Name:</p>
+                <input type="text" name="Name"></br>
+                <p>Username:</p>
+                <input type="text" name="Username"></br>
+                <p>Password:</p>
+                <input type="text" name="Password"></br>
+                <p>Repeat Password:</p>
+                <input type="text" name="Password2"></br></br>
+                <input type="submit" value="Registrera">
         </form>
     </body>
 </html>
