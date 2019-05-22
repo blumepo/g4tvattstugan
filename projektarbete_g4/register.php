@@ -11,7 +11,7 @@
             <h1 id="h1">Registrera dig</h1>
         </div>
    
-        <form name="form1" action="process.php" method="_GET" onsubmit="return check()">
+        <form name="form_reg" action="process_reg.php" method="_GET" onsubmit="return checkReg()">
                 E-postadress:<br></br><input type="text" name="Mail"></br>
                 Name: <br></br><input type="text" name="Name"></br>
                 Username:<br></br><input type="text" name="Username"></br>
