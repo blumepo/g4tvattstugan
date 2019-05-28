@@ -15,6 +15,7 @@
         $Mail = $_SESSION['Mail'];
         $Comment = $_GET["Kommentar"];
 
+
         addCommentTodatabase($Name,$Mail,$Comment);
         
 function addCommentToDatabase($Name,$Mail,$Comment)
