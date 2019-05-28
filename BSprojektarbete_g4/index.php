@@ -163,7 +163,7 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
               Posta en kommentar
             </button>
           </div>
-          <form name="Search" method="get" action="process_search.php" onsubmit="return CheckSearch()">
+          <form name="Search" method="get" action="process_search.php">
             <input type="text" placeholder=" Sök i forum.." name="Query">
             <input type="submit" value="Sök">
           </form>
