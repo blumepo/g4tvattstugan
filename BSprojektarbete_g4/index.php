@@ -163,7 +163,10 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
               Posta en kommentar
             </button>
           </div>
-          <input type="text" placeholder=" Sök i forum..">
+          <form name="Search" method="get" action="process_search.php" onsubmit="return CheckSearch()">
+            <input type="text" placeholder=" Sök i forum.." name="Query">
+            <input type="submit" value="Sök">
+          </form>
         </div>
         </div>
         <!--här ska tidigare kommentarer stå(showComments-filen)-->
@@ -179,9 +182,9 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
         {
           $Id=$row['id'];
           echo "<p><b>Namn:</b> ". $row["name"]. "</br><b>E-post:</b> ". $row["email"]. "</br><b>Kommentar:</b> ". $row["comment"] . "<br></p>
-                <form name=\"del_com\" method=\"get\" action=\"process_com_del.php\">
+                <form method=\"get\" action=\"process_com_del.php\">
                 <input 
-                <input type=\"submit\" name=\"delete\" class=\"btn btn-primary btn-lg\" value=\"Ta bort kommentar\">
+                <input type=\"submit\" name=\"delete\" class=\"btn btn-primary btn-lg\" value=\"$Id\">
                 </form>"
                 ;
         }
