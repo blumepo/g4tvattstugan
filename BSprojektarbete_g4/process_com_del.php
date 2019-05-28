@@ -15,13 +15,17 @@
         $Mail = $_SESSION['Mail'];
         $Comment = $_GET["Kommentar"];
         
-     deleteCommentFromDatabase($Name,$Mail,$Comment);
-     
-function deleteCommentFromDatabase($Name,$Mail,$Comment)
+        $Id = $_GET["Id"];
+
+        deleteCommentFromDatabase($Id);
+
+
+
+function deleteCommentFromDatabase($Id)
  {
      include "database.php";
 
-$sql = "DELETE FROM Comments (name,email,comment) VALUES ('$Name','$Mail','$Comment')";
+$sql = "DELETE FROM Comments WHERE id='$Id'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Din kommentar har raderats fr�n forumet";

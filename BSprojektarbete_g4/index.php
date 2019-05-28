@@ -46,24 +46,35 @@ echo "<nav class=\"navbar navbar-light bg-light static-top\">
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
-          <h1 class="mb-5">Välkommen till din tvättstuga!</br>Logga in eller registrera dig för att se och boka tvättider</h1>
+        <?php
+        if(isset($_SESSION['Mail'])){
+          echo "<h1 class=\"mb-5\">Välkommen till din tvättstuga, " . $_SESSION["Name"] . "!</br></h1>";
+        }
+        else {
+          echo"<h1 class=\"mb-5\">Välkommen till din tvättstuga!</br>Logga in eller registrera dig för att se och boka tvättider</h1>";
+        }
+        ?>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form id="form_to_login" name="form_to_reg" action="login_process.php" method="_GET" onsubmit="return checkUser()">
-            <div class="form-row">
-              <div class="col-11 col-md-9 mb-2 mb-md-3">
-                <input type="email" class="form-control form-control-lg" placeholder="E-mail" name="Mail">
+        <?php
+        if (!isset($_SESSION['Mail'])){
+          echo"<form id=\"form_to_login\" name=\"form_to_reg\" action=\"login_process.php\" method=\"_GET\" onsubmit=\"return checkUser()\">
+            <div class=\"form-row\">
+              <div class=\"col-11 col-md-9 mb-2 mb-md-3\">
+                <input type=\"email\" class=\"form-control form-control-lg\" placeholder=\"E-mail\" name=\"Mail\">
               </div>
               </br>
-              <div class="col-11 col-md-9 mb-2 mb-md-0">
-                <input type="password" class="form-control form-control-lg" placeholder="Lösenord" name="Password">
+              <div class=\"col-11 col-md-9 mb-2 mb-md-0\">
+                <input type=\"password\" class=\"form-control form-control-lg\" placeholder=\"Lösenord\" name=\"Password\">
               </div>
-              <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-primary btn-lg" onclick="return checkUser()">  Logga In  
+              <div class=\"col-12 col-md-3\">
+                <button type=\"submit\" class=\"btn btn-primary btn-lg\" onclick=\"return checkUser()\">  Logga In  
                 </button>
               </div>
             </div>
-          </form>
+          </form>";
+        }
+        ?>
         </div>
       </div>
     </div>
