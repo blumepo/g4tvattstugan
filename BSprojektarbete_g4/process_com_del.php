@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="assets/css/mall.css">
-        <title>TvÃ¤ttstugan</title>
+        <title>Tvättstugan</title>
  </head>
     <body>
     </body>
@@ -15,20 +15,23 @@
         $Mail = $_SESSION['Mail'];
         $Comment = $_GET["Kommentar"];
 
+<<<<<<< HEAD
+        deleteCommentFromDatabase($Name,$Mail,$Comment);
+=======
 
         addCommentTodatabase($Name,$Mail,$Comment);
-
+>>>>>>> 79ffe1765f92029969b36af5122a3a0d41c00bf4
         
-function addCommentTodatabase($Name,$Mail,$Comment)
+function deleteCommentFromDatabase($Name,$Mail,$Comment)
  {
      include "database.php";
 
-$sql = "INSERT INTO Comments (name,email,comment) VALUES ('$Name','$Mail','$Comment')";
+$sql = "DELETE FROM Comments (name,email,comment) VALUES ('$Name','$Mail','$Comment')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Din kommentar har lagts till i forumet";
+    echo "Din kommentar har raderats från forumet";
 } else {
-    echo "NÃ¥got fick fel: " . $sql . "<br>" . $conn->error;
+    echo "Något fick fel: " . $sql . "<br>" . $conn->error;
 }
 
 $conn->close();
