@@ -179,9 +179,9 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
         {
           $Id=$row['id'];
           echo "<p><b>Namn:</b> ". $row["name"]. "</br><b>E-post:</b> ". $row["email"]. "</br><b>Kommentar:</b> ". $row["comment"] . "<br></p>
-                <form name=\"del_com\" method=\"get\" action=\"process_com_del.php\">
-                <input 
-                <input type=\"submit\" name=\"delete\" class=\"btn btn-primary btn-lg\" value=\"Ta bort kommentar\">
+                <form name=\"del_com\" name=\"delete\" method=\"get\" action=\"process_com_del.php\">
+                
+                <input type=\"submit\" name=\"delete\" class=\"btn btn-primary btn-lg\" value=\"$Id\">
                 </form>"
                 ;
         }
