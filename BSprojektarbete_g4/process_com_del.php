@@ -13,9 +13,9 @@
 		session_start();
         $Name = $_SESSION['Name'];
         $Mail = $_SESSION['Mail'];
-        $Comment = $_GET["Kommentar"];
+        //$Comment = $_GET["Kommentar"];
         
-        $Id = $_GET["Id"];
+        $Id = $_GET['delete'];
 
         deleteCommentFromDatabase($Id);
 
@@ -35,5 +35,5 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 }
-header( "refresh:2;url=index.php" );
+//header( "refresh:2;url=index.php" );
 ?>
