@@ -166,7 +166,9 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
       {
         while($row = $result->fetch_assoc())
         {
-          echo "<p><b>Namn:</b> ". $row["name"]. "</br><b>E-post:</b> ". $row["email"]. "</br><b>Kommentar:</b> ". $row["comment"] . "<br></p>";
+          echo "<p><b>Namn:</b> ". $row["name"]. "</br><b>E-post:</b> ". $row["email"]. "</br><b>Kommentar:</b> ". $row["comment"] . "<br></p>
+                <button type=\"submit\" class=\"btn btn-primary btn-lg\" action=\"process_com_del.php}\" onclick=\"return checkUser()\">  Ta bort kommentar 
+                </button></br>";
         }
       }
       else 
