@@ -68,7 +68,7 @@ echo "<nav class=\"navbar navbar-light bg-light static-top\">
                 <input type=\"password\" class=\"form-control form-control-lg\" placeholder=\"Lösenord\" name=\"Password\">
               </div>
               <div class=\"col-12 col-md-3\">
-                <button type=\"submit\" class=\"btn btn-primary btn-lg\" onclick=\"return checkUser()\">  Logga In  
+                <button type=\"submit\" class=\"btn btn-primary btn-lg\" onclick=\"return checkUser();\">  Logga In  
                 </button>
               </div>
             </div>
@@ -163,7 +163,7 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
               Posta en kommentar
             </button>
           </div>
-          <form name="Search" method="get" action="process_search.php" onsubmit="return CheckSearch()">
+          <form name="Search" method="get" action="process_search.php">
             <input type="text" placeholder=" Sök i forum.." name="Query">
             <input type="submit" value="Sök">
           </form>
