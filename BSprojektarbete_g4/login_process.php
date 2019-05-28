@@ -23,7 +23,7 @@ function login()
 	$result=mysqli_query($conn,$sql_q);
 
 	if($result){
-	echo("Funkar");}
+	echo("Connection Secured.");}
 
 	$row=mysqli_fetch_array($result, MYSQLI_ASSOC);
 
@@ -48,7 +48,7 @@ function login()
 	}
 	else
 	{
-		echo("Felaktigt användarnamn eller lösenord");
+		echo"<div class = \"center\">Felaktigt användarnamn eller lösenord<div class = \"loader\"></div></div>";
 		
 	}
 $conn->close();

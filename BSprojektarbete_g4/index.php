@@ -68,7 +68,7 @@ echo "<nav class=\"navbar navbar-light bg-light static-top\">
                 <input type=\"password\" class=\"form-control form-control-lg\" placeholder=\"Lösenord\" name=\"Password\">
               </div>
               <div class=\"col-12 col-md-3\">
-                <button type=\"submit\" class=\"btn btn-primary btn-lg\" onclick=\"return checkUser()\">  Logga In  
+                <button type=\"submit\" class=\"btn btn-primary btn-lg\" onclick=\"return checkUser();\">  Logga In  
                 </button>
               </div>
             </div>
