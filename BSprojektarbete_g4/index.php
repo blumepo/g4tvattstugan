@@ -5,38 +5,27 @@ session_start();
 
 ?>
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
   <script type="text/javascript" src="assets/js/function.js"></script>
-
   <title>Tvättstugan</title>
-
-  <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-
-  <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
-  <!-- Custom styles for this template -->
   <link href="css/landing-page.min.css" rel="stylesheet">
 
 </head>
 
 <body>
-
-  <!-- Navigation -->
   <?php
   if(isset($_SESSION['Mail'])){
 echo "<nav class=\"navbar navbar-light bg-light static-top\">
     <div class=\"container\">
       <a class=\"navbar-brand\" href=\"index.php\"><img src=\"https://cali-laundry.com/wp-content/uploads/2018/06/Cali_Laundry-Laundromat-Anaheim-Icon-Washing_Machine-Blue.png\" width=\"60\" height=\"60\" title=\"Home button\" alt=\"Home\"></a>
       
-<!-- Button trigger modal -->
 <button type=\"submit\" class=\"btn btn-primary btn-lg\" onclick=\"return LogOut()\">
   Logga Ut
 </button>
@@ -47,14 +36,12 @@ echo "<nav class=\"navbar navbar-light bg-light static-top\">
     <div class=\"container\">
       <a class=\"navbar-brand\" href=\"index.php\"><img src=\"https://cali-laundry.com/wp-content/uploads/2018/06/Cali_Laundry-Laundromat-Anaheim-Icon-Washing_Machine-Blue.png\" width=\"60\" height=\"60\" title=\"Home button\" alt=\"Home\"></a>
       
-<!-- Button trigger modal -->
 <button type=\"button\" class=\"btn btn-primary btn-lg\" data-toggle=\"modal\" data-target=\"#Registrera\">
   Registrera
 </button>
     </div>
   </nav>";
 } ?>  
-  <!-- Masthead -->
   <header class="masthead text-white text-center">
     <div class="overlay"></div>
     <div class="container">
@@ -98,9 +85,6 @@ window.timekitBookingConfig = {
 }
 </script>
 
-
-
-<!-- Modal -->
 <div class="modal fade" id="Registrera" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -151,8 +135,6 @@ window.timekitBookingConfig = {
   </div>
 </div>
   
-
-  <!-- Icons Grid -->
   <section class="features-icons bg-light text-center">
     <?php 
 if(isset($_SESSION['Mail'])){
@@ -185,7 +167,9 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
       {
         while($row = $result->fetch_assoc())
         {
-          echo "<p><b>Namn:</b> ". $row["name"]. "</br><b>E-post:</b> ". $row["email"]. "</br><b>Kommentar:</b> ". $row["comment"] . "<br></p>";
+          echo "<p><b>Namn:</b> ". $row["name"]. "</br><b>E-post:</b> ". $row["email"]. "</br><b>Kommentar:</b> ". $row["comment"] . "<br></p>
+                <button type=\"submit\" class=\"btn btn-primary btn-lg\" action=\"process_com_del.php}\" onclick=\"return checkUser()\">  Ta bort kommentar 
+                </button></br>";
         }
       }
       else 
@@ -249,7 +233,6 @@ $conn->close();
     </div>
   </footer>
 
-  <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 

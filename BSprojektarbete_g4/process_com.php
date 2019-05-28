@@ -15,16 +15,18 @@
         $Mail = $_SESSION['Mail'];
         $Comment = $_GET["Kommentar"];
 
-        deleteCommentFromDatabase($Name,$Mail,$Comment);
+
+        addCommentTodatabase($Name,$Mail,$Comment);
+
         
-function deleteCommentFromDatabase($Name,$Mail,$Comment)
+function addCommentTodatabase($Name,$Mail,$Comment)
  {
      include "database.php";
 
-$sql = "DELETE FROM Comments (name,email,comment) VALUES ('$Name','$Mail','$Comment')";
+$sql = "INSERT INTO Comments (name,email,comment) VALUES ('$Name','$Mail','$Comment')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Din kommentar har raderats från forumet";
+    echo "Din kommentar har lagts till i forumet";
 } else {
     echo "Något fick fel: " . $sql . "<br>" . $conn->error;
 }
