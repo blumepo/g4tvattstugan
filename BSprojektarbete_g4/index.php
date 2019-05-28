@@ -24,24 +24,23 @@ session_start();
   if(isset($_SESSION['Mail'])){
 echo "<nav class=\"navbar navbar-light bg-light static-top\">
     <div class=\"container\">
-      <a class=\"navbar-brand\" href=\"index.php\"><img src=\"https://cali-laundry.com/wp-content/uploads/2018/06/Cali_Laundry-Laundromat-Anaheim-Icon-Washing_Machine-Blue.png\" width=\"60\" height=\"60\" title=\"Home button\" alt=\"Home\"></a>
-      
-<button type=\"submit\" class=\"btn btn-primary btn-lg\" onclick=\"return LogOut()\">
-  Logga Ut
-</button>
+    <a class=\"navbar-brand\" href=\"index.php\"><img src=\"https://cali-laundry.com/wp-content/uploads/2018/06/Cali_Laundry-Laundromat-Anaheim-Icon-Washing_Machine-Blue.png\" width=\"60\" height=\"60\" title=\"Home button\" alt=\"Home\"></a>
+    <button type=\"button\" class=\"btn btn-primary btn-lg\" onclick= \"LogOut()\" href=\"logout_process.php\">
+    Logga Ut
+    </button>
     </div>
-  </nav>";
+    </nav>";
 } else {
  echo "<nav class=\"navbar navbar-light bg-light static-top\">
     <div class=\"container\">
-      <a class=\"navbar-brand\" href=\"index.php\"><img src=\"https://cali-laundry.com/wp-content/uploads/2018/06/Cali_Laundry-Laundromat-Anaheim-Icon-Washing_Machine-Blue.png\" width=\"60\" height=\"60\" title=\"Home button\" alt=\"Home\"></a>
-      
-<button type=\"button\" class=\"btn btn-primary btn-lg\" data-toggle=\"modal\" data-target=\"#Registrera\">
-  Registrera
-</button>
+    <a class=\"navbar-brand\" href=\"index.php\"><img src=\"https://cali-laundry.com/wp-content/uploads/2018/06/Cali_Laundry-Laundromat-Anaheim-Icon-Washing_Machine-Blue.png\" width=\"60\" height=\"60\" title=\"Home button\" alt=\"Home\"></a>
+    <button type=\"button\" class=\"btn btn-primary btn-lg\" data-toggle=\"modal\" data-target=\"#Registrera\">
+    Registrera
+    </button>
     </div>
-  </nav>";
-} ?>  
+    </nav>";
+} ?> 
+ 
   <header class="masthead text-white text-center">
     <div class="overlay"></div>
     <div class="container">
