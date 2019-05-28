@@ -34,6 +34,11 @@ function CheckReg() {
     }
 }
 
+function RemoveComment()
+{
+    
+}
+
 
 function LogOut() {
     session_start();
