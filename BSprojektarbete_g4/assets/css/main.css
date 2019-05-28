@@ -94,23 +94,25 @@ li2 a:hover {
   height: 120px;
   position: absolute;
   text-align: center;
-  font-size: 2.5em;
+  font-size: 1.8em;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: #33C3F0;
-  border-radius: 15px 15px 50px 50px;
+  background-color: #3384ef;
+  border-radius: 15px 15px 15px 15px;
   padding:14px 16px;
   color: whitesmoke;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .loader {
-  border: 16px solid #f3f3f3;
-  border-top: 16px solid #33C3F0;
+  position:absolute;
+  padding-top: 0px;
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3384ef;
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 60px;
+  height: 60px;
   animation: spin 2s linear infinite;
 }
 
