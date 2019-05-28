@@ -25,7 +25,7 @@ session_start();
 echo "<nav class=\"navbar navbar-light bg-light static-top\">
     <div class=\"container\">
     <a class=\"navbar-brand\" href=\"index.php\"><img src=\"https://cali-laundry.com/wp-content/uploads/2018/06/Cali_Laundry-Laundromat-Anaheim-Icon-Washing_Machine-Blue.png\" width=\"60\" height=\"60\" title=\"Home button\" alt=\"Home\"></a>
-    <button type=\"button\" class=\"btn btn-primary btn-lg\" onclick= \"LogOut()\" href=\"logout_process.php\">
+    <button type=\"button\" class=\"btn btn-primary btn-lg\" onclick=\"location.href= 'logout_process.php'\">
     Logga Ut
     </button>
     </div>
