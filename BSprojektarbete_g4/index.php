@@ -58,7 +58,7 @@ echo "<nav class=\"navbar navbar-light bg-light static-top\">
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
         <?php
         if (!isset($_SESSION['Mail'])){
-          echo"<form id=\"form_to_login\" name=\"form_to_login\" action=\"login_process.php\" method=\"post\" onsubmit=\"return checkUser()\">
+          echo"<form autocomplete=\"off\" id=\"form_to_login\" name=\"form_to_login\" action=\"login_process.php\" method=\"post\" onsubmit=\"return checkUser()\">
             <div class=\"form-row\">
               <div class=\"col-11 col-md-9 mb-2 mb-md-3\">
                 <input type=\"email\" class=\"form-control form-control-lg\" placeholder=\"E-mail\" name=\"Mail\">
@@ -103,7 +103,7 @@ window.timekitBookingConfig = {
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-	   <form name="form_reg" action="process_reg.php" method="post" onsubmit="return CheckReg()">
+	   <form name="form_reg" autocomplete="off" action="process_reg.php" method="post" onsubmit="return CheckReg()">
                 <p>E-postadress:</p>
                 <input type="text" name="Mail"></br>
                 <p>Namn:</p>
@@ -131,7 +131,7 @@ window.timekitBookingConfig = {
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-	   <form name="form1" action="process_com.php" method="_GET" onsubmit="return CheckComment()">
+	   <form name="form1" autocomplete="off" action="process_com.php" method="_GET" onsubmit="return CheckComment()">
                 <p>Kommentar:</p>
                 <textarea rows="4" cols="50" name="Kommentar"></textarea></br></br>
 				
@@ -163,7 +163,7 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
               Posta en kommentar
             </button>
           </div>
-          <form name="Search" method="get" action="process_search.php">
+          <form name="Search" autocomplete="off" method="get" action="process_search.php">
             <input type="text" placeholder=" Sök i forum.." name="Query">
             <input type="submit" value="Sök">
           </form>
@@ -195,7 +195,7 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
 
 			if(($_SESSION['Admin'])==1){
 				$Id = $row1['id'];
-                echo "<form name=\"del_com\" name=\"delete\" method=\"get\" action=\"process_com_del.php\">
+                echo "<form name=\"del_com\" autocomplete=\"off\" name=\"delete\" method=\"get\" action=\"process_com_del.php\">
                 <input type=\"hidden\" name=\"test\" value=\"$Id\">
                 <input type=\"submit\" class=\"btn btn-primary btn-lg\" value=\"Ta bort\" >
 				        <p>____________________________________________________________________</p>
