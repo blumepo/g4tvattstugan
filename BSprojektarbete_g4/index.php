@@ -174,14 +174,22 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
       include "database.php";
 
       $sql = "SELECT * FROM Comments";  
-	  $sql2 = "SELECT * FROM User_login WHERE Id=";  
+
       $result=$conn->query($sql);
+	  $row1 = $result->fetch_assoc();
+	  	  
+		  $Uid = row1["userid"];
+		  $sql2 = "SELECT * FROM User_login WHERE Id="$Uid";
+		  $result2=$conn->query($sql2);
+		  $row2 = $result2->fetch_assoc();
+
+
 
       if ($result->num_rows > 0) 
       {
         while($row = $result->fetch_assoc())
         {
-          echo "<p><b>Namn:</b> ". $row["name"]. "</br><b>E-post:</b> ". $row["email"]. "</br><b>Kommentar:</b> ". $row["comment"] . "<br></p>";
+          echo "<p><b>Namn:</b> ". $row2["name"]. "</br><b>E-post:</b> ". $row2["email"]. "</br><b>Kommentar:</b> ". $row["comment"] . "<br></p>";
 		  
 
 			if(($_SESSION['Admin'])==1){
