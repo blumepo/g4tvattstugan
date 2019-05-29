@@ -7,18 +7,18 @@
     </head>
     <body>
 <?php
+        include "database.php";
 		session_start();
-        $Name = $_SESSION['Name'];
-        $Mail = $_SESSION['Mail'];
+        $Id = $_SESSION['Id'];
         $Comment = mysqli_real_escape_string($conn, $_GET["Kommentar"]);
 
-        include "database.php";
 
-$sql = "INSERT INTO Comments (name,email,comment) VALUES ('$Name','$Mail','$Comment')";
+
+$sql = "INSERT INTO Comments (userId,comment) VALUES ('$Id','$Comment')";
 if ($conn->query($sql) === TRUE && trim($Comment) !== "") {
     echo "<div class = \"center\">Din kommentar har lagts till i forumet<div class = \"loader\"></div></div>";
 } else {
-    echo "<div class = \"center\">Något fick fel: " . $sql . "<br>" . $conn->error"<div class = \"loader\"></div></div>";
+    echo "Något fick fel: " . $sql . "<br>" . $conn->error;
 }
 $conn->close();
 header( "refresh:2;url=index.php" );
