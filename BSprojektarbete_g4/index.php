@@ -58,7 +58,7 @@ echo "<nav class=\"navbar navbar-light bg-light static-top\">
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
         <?php
         if (!isset($_SESSION['Mail'])){
-          echo"<form id=\"form_to_login\" name=\"form_to_reg\" action=\"login_process.php\" method=\"_GET\" onsubmit=\"return checkUser()\">
+          echo"<form id=\"form_to_login\" name=\"form_to_login\" action=\"login_process.php\" method=\"_GET\" onsubmit=\"return checkUser()\">
             <div class=\"form-row\">
               <div class=\"col-11 col-md-9 mb-2 mb-md-3\">
                 <input type=\"email\" class=\"form-control form-control-lg\" placeholder=\"E-mail\" name=\"Mail\">
@@ -68,7 +68,7 @@ echo "<nav class=\"navbar navbar-light bg-light static-top\">
                 <input type=\"password\" class=\"form-control form-control-lg\" placeholder=\"Lösenord\" name=\"Password\">
               </div>
               <div class=\"col-12 col-md-3\">
-                <button type=\"submit\" class=\"btn btn-primary btn-lg\" onclick=\"return checkUser()\">  Logga In  
+                <button type=\"submit\" class=\"btn btn-primary btn-lg\" onclick=\"return checkUser();\">  Logga In  
                 </button>
               </div>
             </div>

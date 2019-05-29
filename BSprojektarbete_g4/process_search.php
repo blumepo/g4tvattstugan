@@ -4,7 +4,7 @@ include 'database.php';
     // gets value sent over search form
          
         $raw_results = "SELECT * FROM Comments
-            WHERE (name LIKE '%".$query."%') OR (email LIKE '%".$query."%') OR (comment LIKE '%".$query."%')";
+        WHERE (name LIKE '%".$query."%') OR (email LIKE '%".$query."%') OR (comment LIKE '%".$query."%')";
         $result=$conn->query($raw_results);
              
         // * means that it selects all fields, you can also write: `id`, `title`, `text`
