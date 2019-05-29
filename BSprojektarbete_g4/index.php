@@ -188,9 +188,9 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
 
       if ($result->num_rows > 0) 
       {
-        while($row = $result->fetch_assoc())
+        while($row1 = $result->fetch_assoc())
         {
-          echo "<p><b>Namn:</b> ". $row2["Name"]. "</br><b>E-post:</b> ". $row2["Mail"]. "</br><b>Kommentar:</b> ". $row["comment"] . "<br></p>";
+          echo "<p><b>Namn:</b> ". $row2["Name"]. "</br><b>E-post:</b> ". $row2["Mail"]. "</br><b>Kommentar:</b> ". $row1["comment"] . "<br></p>";
 		  
 
 			if(($_SESSION['Admin'])==1){
