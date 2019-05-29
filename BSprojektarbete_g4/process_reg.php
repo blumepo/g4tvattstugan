@@ -44,7 +44,7 @@ else {
             }
 
             $conn->close();
-        }
+        
         
 header( "refresh:3;url=index.php" );
 ?>

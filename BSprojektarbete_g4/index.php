@@ -58,7 +58,7 @@ echo "<nav class=\"navbar navbar-light bg-light static-top\">
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
         <?php
         if (!isset($_SESSION['Mail'])){
-          echo"<form id=\"form_to_login\" name=\"form_to_login\" action=\"login_process.php\" method=\"_GET\" onsubmit=\"return checkUser()\">
+          echo"<form id=\"form_to_login\" name=\"form_to_login\" action=\"login_process.php\" method=\"post\" onsubmit=\"return checkUser()\">
             <div class=\"form-row\">
               <div class=\"col-11 col-md-9 mb-2 mb-md-3\">
                 <input type=\"email\" class=\"form-control form-control-lg\" placeholder=\"E-mail\" name=\"Mail\">
@@ -103,7 +103,7 @@ window.timekitBookingConfig = {
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-	   <form name="form_reg" action="process_reg.php" method="_GET" onsubmit="return CheckReg()">
+	   <form name="form_reg" action="process_reg.php" method="post" onsubmit="return CheckReg()">
                         <p>E-postadress:</p>
                 <input type="text" name="Mail"></br>
                 <p>Namn:</p>
