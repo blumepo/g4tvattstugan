@@ -16,18 +16,21 @@
     <body>
 <?php
 include 'database.php';
- $query = $_GET['Query']; 
-         
-        $raw_results = "SELECT * FROM Comments
-        WHERE (name LIKE '%".$query."%') OR (email LIKE '%".$query."%') OR (comment LIKE '%".$query."%')";
+        $query = $_GET['Query'];
+        $raw_results = "SELECT Id FROM User_login
+        WHERE (Name LIKE '%".$query."%') OR (Mail LIKE '%".$query."%')";
+// OR (comment LIKE '%".$query."%')
+        $result = mysqli_query($conn, $raw_results);
+        $something = $result->fetch_assoc();
+        $somethingId = $something['Id'];
+        $sql = "SELECT * FROM Comments WHERE userId = '$somethingId'";
+        $result2= $conn->query($sql);
 
-        $result=$conn->query($raw_results);
-             
         if ($result->num_rows > 0) 
         {
-            while($row = $result->fetch_assoc())
+            while($row = $result2->fetch_assoc())
             {             
-                echo "<p>".$row['name']."</br>".$row['email']."</br>".$row['comment']."</p>";
+                echo "<p>".$row['id']."</br>".$row['<userI></userI>d']."</br></p>";
             }   
         }
         else
