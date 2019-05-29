@@ -15,7 +15,7 @@
         $Mail = $_SESSION['Mail'];
         //$Comment = $_GET["Kommentar"];
         
-        $Id = $_GET['delete'];
+        $Id = $_GET['test'];
 
         deleteCommentFromDatabase($Id);
 
