@@ -8,9 +8,9 @@
     <body>
     <?php
         include "database.php";
-        $Name = mysqli_real_escape_string($conn, $_GET["Name"]);
-        $Mail = mysqli_real_escape_string($conn, $_GET["Mail"]);
-        $Password = mysqli_real_escape_string($conn, $_GET["Password"]);    
+        $Name = mysqli_real_escape_string($conn, $_POST["Name"]);
+        $Mail = mysqli_real_escape_string($conn, $_POST["Mail"]);
+        $Password = mysqli_real_escape_string($conn, $_POST["Password"]);    
 
         addTodatabase($Name,$Mail, $Password);
 
