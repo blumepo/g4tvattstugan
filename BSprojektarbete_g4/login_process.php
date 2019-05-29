@@ -20,7 +20,7 @@ function login()
 	$Password = mysqli_real_escape_string($conn, $_POST['Password']);
 
 	$sql_q = "SELECT * FROM User_login WHERE Mail = '$Mail'";
-	$result=mysqli_query($conn,$sql_q);
+	$result = mysqli_query($conn,$sql_q);
 
 	if($result){
 	echo("Connection Secured.");}
