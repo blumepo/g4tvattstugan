@@ -2,18 +2,15 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="assets/css/mall.css">
-        <title>Tvättstugan</title>
- </head>
+        <link rel="stylesheet" href="assets/css/main.css">
+        <title>Blume</title>
+    </head>
     <body>
-    </body>
-    </html>
-
-    <?php
+<?php
 		session_start();
         $Name = $_SESSION['Name'];
         $Mail = $_SESSION['Mail'];
-        $Comment = $_GET["Kommentar"];
+        $Comment = mysqli_real_escape_string($conn, $_GET["Kommentar"]);
 
 
         addCommentTodatabase($Name,$Mail,$Comment);
@@ -25,13 +22,14 @@ function addCommentTodatabase($Name,$Mail,$Comment)
 
 $sql = "INSERT INTO Comments (name,email,comment) VALUES ('$Name','$Mail','$Comment')";
 
-if ($conn->query($sql) === TRUE) {
-    echo "Din kommentar har lagts till i forumet";
+if ($conn->query($sql) === TRUE && trim($Comment) !== "") {
+    echo "<div class = \"center\">Din kommentar har lagts till i forumet<div class = \"loader\"></div></div>";
 } else {
-    echo "Något fick fel: " . $sql . "<br>" . $conn->error;
+    echo "<div class = \"center\">Något fick fel: " . $sql . "<br>" . $conn->error"<div class = \"loader\"></div></div>";
 }
-
 $conn->close();
 }
 header( "refresh:2;url=index.php" );
 ?>
+    </body>
+</html>

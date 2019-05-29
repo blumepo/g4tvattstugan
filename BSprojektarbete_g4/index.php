@@ -109,9 +109,9 @@ window.timekitBookingConfig = {
                 <p>Namn:</p>
                 <input type="text" name="Name"></br>
                 <p>Lösenord:</p>
-                <input type="text" name="Password"></br>
+                <input type="password" name="Password"></br>
                 <p>Upprepa lösenord:</p>
-                <input type="text" name="Password2"></br></br>
+                <input type="password" name="Password2"></br></br>
 				</form>
       </div> 
       <div class="modal-footer">
@@ -226,7 +226,7 @@ $conn->close();
               <a href="#">Privacy Policy</a>
             </li>
           </ul>
-          <p class="small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
+          <p class="small mb-4 mb-lg-0">g4.tvattify.io 2019. All Rights Reserved.</p>
         </div>
         <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
           <ul class="list-inline mb-0">
