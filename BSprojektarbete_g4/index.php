@@ -176,7 +176,7 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
       $sql = "SELECT * FROM Comments";  
 
       $result=$conn->query($sql);
-	  $row1 = $result->fetch_assoc();
+	    $row1 = $result->fetch_assoc();
 	  	  
 		  $Uid = $row1["userId"];
 		  $sql2 = "SELECT * FROM User_login WHERE Id='$Uid'";
@@ -194,7 +194,7 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
 		  
 
 			if(($_SESSION['Admin'])==1){
-				$Id = $row1['userId'];
+				$Id = $row1['id'];
                 echo "<form name=\"del_com\" name=\"delete\" method=\"get\" action=\"process_com_del.php\">
                 <input type=\"hidden\" name=\"test\" value=\"$Id\">
                 <input type=\"submit\" class=\"btn btn-primary btn-lg\" value=\"Ta bort\" >
