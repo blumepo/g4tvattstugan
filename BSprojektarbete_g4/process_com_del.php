@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="assets/css/mall.css">
-        <title>Tv�ttstugan</title>
+        <title>Tvättstugan</title>
  </head>
     <body>
     </body>
@@ -17,23 +17,17 @@
         
         $Id = $_GET['test'];
 
-        deleteCommentFromDatabase($Id);
-
-
-
-function deleteCommentFromDatabase($Id)
- {
-     include "database.php";
+    include "database.php";
 
 $sql = "DELETE FROM Comments WHERE id='$Id'";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Din kommentar har raderats fr�n forumet";
+    echo "Din kommentar har raderats från forumet";
 } else {
-    echo "N�got fick fel: " . $sql . "<br>" . $conn->error;
+    echo "Något fick fel: " . $sql . "<br>" . $conn->error;
 }
 
 $conn->close();
-}
-//header( "refresh:2;url=index.php" );
+header( "refresh:3;url=index.php" );
+
 ?>
