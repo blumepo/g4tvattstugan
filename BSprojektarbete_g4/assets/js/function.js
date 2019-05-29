@@ -29,6 +29,9 @@ function CheckReg() {
     } else if (!document.form_reg.Mail.value.includes(".") || !document.form_reg.Mail.value.includes("@")) {
         alert("Du behöver fylla i en giltig e-postadress för att registerar dig");
         return false;
+    } else if (document.form_reg.Password.value != document.form_reg.Password2.value){
+        alert("De angivna lösenorden matchar inte.");
+        return false;
     } else {
         document.form_reg.submit();
     }

@@ -104,7 +104,7 @@ window.timekitBookingConfig = {
       </div>
       <div class="modal-body">
 	   <form name="form_reg" action="process_reg.php" method="post" onsubmit="return CheckReg()">
-                        <p>E-postadress:</p>
+                <p>E-postadress:</p>
                 <input type="text" name="Mail"></br>
                 <p>Namn:</p>
                 <input type="text" name="Name"></br>
