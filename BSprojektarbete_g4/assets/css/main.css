@@ -148,7 +148,7 @@ li2 a:hover {
 
 .loader {
   position:absolute;
-  padding-top: 0px;
+  padding-top: 5px;
   border: 8px solid #f3f3f3;
   border-top: 8px solid #3384ef;
   border-radius: 50%;
