@@ -4,34 +4,30 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="assets/css/mall.css">
         <title>Tvättstugan</title>
- </head>
+    </head>
     <body>
-    </body>
-    </html>
-
     <?php
 		session_start();
         $Name = $_SESSION['Name'];
         $Mail = $_SESSION['Mail'];
         $Comment = $_GET["Kommentar"];
 
-
-        addCommentTodatabase($Name,$Mail,$Comment);
-
-        
-function addCommentTodatabase($Name,$Mail,$Comment)
- {
-     include "database.php";
+        include "database.php";
 
 $sql = "INSERT INTO Comments (name,email,comment) VALUES ('$Name','$Mail','$Comment')";
 
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($sql) === TRUE) 
+{
     echo "Din kommentar har lagts till i forumet";
-} else {
+} 
+else 
+{
     echo "Något fick fel: " . $sql . "<br>" . $conn->error;
 }
 
 $conn->close();
-}
+
 header( "refresh:2;url=index.php" );
 ?>
+   </body>
+    </html>
