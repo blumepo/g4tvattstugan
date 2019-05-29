@@ -181,20 +181,20 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
       {
         while($row = $result->fetch_assoc())
         {
-
-          
           echo "<p><b>Namn:</b> ". $row["name"]. "</br><b>E-post:</b> ". $row["email"]. "</br><b>Kommentar:</b> ". $row["comment"] . "<br></p>";
 		  
+
 			if(($_SESSION['Admin'])==1){
 				$Id = $row['Id'];
                 echo "<form name=\"del_com\" name=\"delete\" method=\"get\" action=\"process_com_del.php\">
                 <input type=\"hidden\" name=\"test\" value=\"$Id\">
                 <input type=\"submit\" class=\"btn btn-primary btn-lg\" value=\"Ta bort\" >
-				<p>____________________________________________________________________</p>
-                </form>";}else{
-				echo "<p>____________________________________________________________________</p>
-                </form>";
-				}
+				        <p>____________________________________________________________________</p>
+                </form>";}
+          else{
+				    echo "<p>____________________________________________________________________</p>
+            </form>";
+				  }
         }
       }
       else 
