@@ -36,9 +36,7 @@ else if ($num_row > 0){
 }
 else if ($conn->query($sql) === TRUE) {
     echo "<div class = \"center\">New record created successfully<div class = \"loader\"></div></div>";
-    session_start();
-    $_SESSION['Mail'] = $Mail;
-    $_SESSION['Name'] = $Name;
+
 } 
 else {
     echo "Error: " . $sql . "<br>" . $conn->error;

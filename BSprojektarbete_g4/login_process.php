@@ -44,6 +44,8 @@ function login()
 		session_start();
 		$_SESSION['Mail'] = $row['Mail'];
 		$_SESSION['Name'] = $row['Name'];
+		$_SESSION['Id'] = $row['Id'];
+		$_SESSION['Admin'] = $row['Admin'];
 		
 	}
 	else
