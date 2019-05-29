@@ -178,8 +178,9 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
       $result=$conn->query($sql);
 	  $row1 = $result->fetch_assoc();
 	  	  
-		  $Uid = row1["userid"];
-		  $sql2 = "SELECT * FROM User_login WHERE Id="$Uid";
+		  $Uid = $row1["userId"];
+		  $sql2 = "SELECT * FROM User_login WHERE Id='$Uid'";
+		  
 		  $result2=$conn->query($sql2);
 		  $row2 = $result2->fetch_assoc();
 
@@ -189,11 +190,11 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
       {
         while($row = $result->fetch_assoc())
         {
-          echo "<p><b>Namn:</b> ". $row2["name"]. "</br><b>E-post:</b> ". $row2["email"]. "</br><b>Kommentar:</b> ". $row["comment"] . "<br></p>";
+          echo "<p><b>Namn:</b> ". $row2["Name"]. "</br><b>E-post:</b> ". $row2["Mail"]. "</br><b>Kommentar:</b> ". $row["comment"] . "<br></p>";
 		  
 
 			if(($_SESSION['Admin'])==1){
-				$Id = $row['Id'];
+				$Id = $row1['userId'];
                 echo "<form name=\"del_com\" name=\"delete\" method=\"get\" action=\"process_com_del.php\">
                 <input type=\"hidden\" name=\"test\" value=\"$Id\">
                 <input type=\"submit\" class=\"btn btn-primary btn-lg\" value=\"Ta bort\" >
