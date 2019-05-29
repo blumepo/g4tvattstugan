@@ -174,6 +174,7 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
       include "database.php";
 
       $sql = "SELECT * FROM Comments";  
+	  $sql2 = "SELECT * FROM User_login WHERE Id=";  
       $result=$conn->query($sql);
 
       if ($result->num_rows > 0) 
@@ -185,6 +186,7 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
           echo "<p><b>Namn:</b> ". $row["name"]. "</br><b>E-post:</b> ". $row["email"]. "</br><b>Kommentar:</b> ". $row["comment"] . "<br></p>";
 		  
 			if(($_SESSION['Admin'])==1){
+				$Id = $row['Id'];
                 echo "<form name=\"del_com\" name=\"delete\" method=\"get\" action=\"process_com_del.php\">
                 <input type=\"hidden\" name=\"test\" value=\"$Id\">
                 <input type=\"submit\" class=\"btn btn-primary btn-lg\" value=\"Ta bort\" >
