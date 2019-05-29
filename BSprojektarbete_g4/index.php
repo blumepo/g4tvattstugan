@@ -173,16 +173,11 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
 <?php 
       include "database.php";
 
-      $sql = "SELECT * FROM Comments";  
+      $sql = "SELECT * FROM Comments LEFT JOIN User_login ON Comments.userID = User_login.Id";  
 
       $result=$conn->query($sql);
 	    $row1 = $result->fetch_assoc();
-	  	  
-		  $Uid = $row1["userId"];
-		  $sql2 = "SELECT * FROM User_login WHERE Id='$Uid'";
-		  
-		  $result2=$conn->query($sql2);
-		  $row2 = $result2->fetch_assoc();
+
 
 
 
@@ -190,7 +185,7 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
       {
         while($row1 = $result->fetch_assoc())
         {
-          echo "<p><b>Namn:</b> ". $row2["Name"]. "</br><b>E-post:</b> ". $row2["Mail"]. "</br><b>Kommentar:</b> ". $row1["comment"] . "<br></p>";
+          echo "<p><b>Namn:</b> ". $row1["Name"]. "</br><b>E-post:</b> ". $row1["Mail"]. "</br><b>Kommentar:</b> ". $row1["comment"] . "<br></p>";
 		  
 
 			if(($_SESSION['Admin'])==1){
