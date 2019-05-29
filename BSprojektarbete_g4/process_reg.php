@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
@@ -7,16 +6,17 @@
         <title>Blume</title>
     </head>
     <body>
-<?php
-include "database.php";
-$Name = mysqli_real_escape_string($conn, $_GET["Name"]);
-$Mail = mysqli_real_escape_string($conn, $_GET["Mail"]);
-$Password = mysqli_real_escape_string($conn, $_GET["Password"]);
-addTodatabase($Name,$Mail, $Password);
+    <?php
+        include "database.php";
+        $Name = mysqli_real_escape_string($conn, $_GET["Name"]);
+        $Mail = mysqli_real_escape_string($conn, $_GET["Mail"]);
+        $Password = mysqli_real_escape_string($conn, $_GET["Password"]);    
 
-function addToDatabase($Name,$Mail, $Password)
-{
-    include "database.php";
+        addTodatabase($Name,$Mail, $Password);
+
+        function addToDatabase($Name,$Mail, $Password)
+        {
+            include "database.php";
 
 $salt = uniqid();
 $hash = sha1($Password.$salt);
@@ -41,10 +41,11 @@ else if ($conn->query($sql) === TRUE) {
 else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
+            }
 
-$conn->close();
-
-}
+            $conn->close();
+        }
+        
 header( "refresh:3;url=index.php" );
 ?>
     </body>

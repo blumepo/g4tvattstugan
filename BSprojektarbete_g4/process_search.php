@@ -1,31 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script type="text/javascript" src="assets/js/function.js"></script>
+  <title>Tvättstugan</title>
+  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="css/landing-page.min.css" rel="stylesheet">
+</head>
+    <body>
 <?php
 include 'database.php';
  $query = $_GET['Query']; 
-    // gets value sent over search form
          
         $raw_results = "SELECT * FROM Comments
         WHERE (name LIKE '%".$query."%') OR (email LIKE '%".$query."%') OR (comment LIKE '%".$query."%')";
+
         $result=$conn->query($raw_results);
              
-        // * means that it selects all fields, you can also write: `id`, `title`, `text`
-        // articles is the name of our table
-         
-        // '%$query%' is what we're looking for, % means anything, for example if $query is Hello
-        // it will match "hello", "Hello man", "gogohello", if you want exact match use `title`='$query'
-        // or if you want to match just full word so "gogohello" is out use '% $query %' ...OR ... '$query %' ... OR ... '% $query'
-        
         if ($result->num_rows > 0) 
         {
             while($row = $result->fetch_assoc())
             {             
                 echo "<p>".$row['name']."</br>".$row['email']."</br>".$row['comment']."</p>";
-                // posts results gotten from database(title and text) you can also show id ($results['id'])
             }   
         }
         else
-        { // if there is no matching rows do following
+        {
             echo "No results";
         }
-
-
 ?>
+    <form name="GoBack" action="index.php">
+        <input type="submit" value="Tillbaka till startsidan">
+    </form>
+   </body>
+</html>
