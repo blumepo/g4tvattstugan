@@ -181,7 +181,7 @@ echo "<div id=\"kommentarer\" class=\"container\" style=\"display: visible;\">";
         while($row = $result->fetch_assoc())
         {
           $Id=$row['id'];
-          echo "<p><b>Namn:</b> ". $row["name"]. "</br><b>E-post:</b> ". $row["email"]. "</br><b>Kommentar:</b> ". $row["comment"] . "<br></p>
+          echo "<p>Namn: ". $row["name"]. "</br>E-post: ". $row["email"]. "</br>Kommentar: ". $row["comment"] . "<br></p>
                 <form name=\"del_com\" name=\"delete\" method=\"get\" action=\"process_com_del.php\">
                 <input type=\"hidden\" name=\"test\" value=\"$Id\">
                 <input type=\"submit\" class=\"btn btn-primary btn-lg\" value=\"Ta bort\" >
