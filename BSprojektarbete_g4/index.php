@@ -113,6 +113,7 @@ window.timekitBookingConfig = {
                 <p>Upprepa lösenord:</p>
                 <input type="password" name="Password2"></br></br>
 				</form>
+        * Genom att registrera samtycker du till att Book n' Wash får spara och lagra dina uppgifter – såsom namn / e-postadress. Detta för att kunna utföra de tjänster som Book n' Wash erbjuder. *
       </div> 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Avbryt</button>
